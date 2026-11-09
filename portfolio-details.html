@@ -1,0 +1,1283 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>PORTFOLIO | Project Details - Aditya Perbawa</title>
+
+    <meta
+      name="description"
+      content="Detail proyek, pengalaman, dan dokumentasi Aditya Perbawa."
+    />
+
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link href="assets/css/main.css" rel="stylesheet" />
+
+    <style>
+      :root {
+        --dt-green: #18d26e;
+        --dt-green-light: #91ffc1;
+        --dt-card: #191919;
+      }
+
+      .detail-section {
+        padding: 108px 0 78px;
+        min-height: 80vh;
+      }
+
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 23px;
+        color: #aaa;
+        font-size: 12px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.25s ease;
+      }
+
+      .back-link:hover {
+        gap: 13px;
+        color: var(--dt-green);
+      }
+
+      .detail-heading {
+        padding-bottom: 22px;
+        margin-bottom: 28px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+      }
+
+      .detail-kicker {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 12px;
+        color: var(--dt-green);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 1.8px;
+        text-transform: uppercase;
+      }
+
+      .detail-heading h2 {
+        margin: 0 0 9px;
+        color: #fff;
+        font:
+          800 clamp(25px, 4vw, 36px)/1.25 "Raleway",
+          sans-serif;
+      }
+
+      .detail-subtitle {
+        margin: 0;
+        color: #999;
+        font-size: 13px;
+        line-height: 1.7;
+      }
+
+      /* GREEN ANIMATION */
+
+      .animated-line {
+        position: relative;
+        width: 115px;
+        height: 3px;
+        margin-top: 18px;
+        overflow: hidden;
+        border-radius: 8px;
+        background: rgba(24, 210, 110, 0.13);
+      }
+
+      .animated-line:after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        left: -100%;
+
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--dt-green),
+          var(--dt-green-light),
+          var(--dt-green),
+          transparent
+        );
+
+        animation: sweep 2.3s linear infinite;
+      }
+
+      @keyframes sweep {
+        to {
+          left: 100%;
+        }
+      }
+
+      /* PAGE LAYOUT */
+
+      .detail-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 285px;
+        gap: 25px;
+        align-items: start;
+      }
+
+      .detail-section-title {
+        position: relative;
+        margin: 0 0 16px;
+        padding-bottom: 12px;
+        color: #fff;
+        font:
+          700 19px "Raleway",
+          sans-serif;
+      }
+
+      .detail-section-title:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 52px;
+        height: 2px;
+        background: var(--dt-green);
+        box-shadow: 0 0 9px rgba(24, 210, 110, 0.4);
+      }
+
+      /* DESCRIPTION */
+
+      .detail-panel {
+        padding: 21px;
+        margin-bottom: 26px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 11px;
+        background: var(--dt-card);
+      }
+
+      .detail-panel p {
+        margin: 0;
+        color: #b8b8b8;
+        font-size: 13px;
+        line-height: 1.9;
+      }
+
+      .detail-panel p + p {
+        margin-top: 12px;
+      }
+
+      #projectDescription {
+        white-space: pre-line;
+      }
+
+      /* HIGHLIGHTS */
+
+      .detail-list {
+        display: flex;
+        flex-direction: column;
+        gap: 11px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .detail-list li {
+        display: flex;
+        gap: 10px;
+        color: #bbb;
+        font-size: 12px;
+        line-height: 1.75;
+      }
+
+      .detail-list li i {
+        flex-shrink: 0;
+        margin-top: 3px;
+        color: var(--dt-green);
+      }
+
+      /* INFORMATION SIDEBAR */
+
+      .detail-info {
+        position: sticky;
+        top: 102px;
+        padding: 21px;
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        border-radius: 12px;
+        background: var(--dt-card);
+      }
+
+      .detail-info h3 {
+        margin: 0 0 15px;
+        color: #fff;
+        font:
+          700 17px "Raleway",
+          sans-serif;
+      }
+
+      .info-item {
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      }
+
+      .info-item:last-of-type {
+        border-bottom: 0;
+      }
+
+      .info-label {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        color: #888;
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      .info-label i {
+        color: var(--dt-green);
+        font-size: 13px;
+      }
+
+      .info-value {
+        display: block;
+        padding: 5px 0 0 20px;
+        color: #e2e2e2;
+        font-size: 12px;
+        line-height: 1.6;
+        overflow-wrap: anywhere;
+      }
+
+      .back-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 17px;
+        padding: 10px 16px;
+        border: 1px solid var(--dt-green);
+        border-radius: 25px;
+        background: var(--dt-green);
+        color: #101010;
+        font-size: 11px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: all 0.25s ease;
+      }
+
+      .back-button:hover {
+        background: transparent;
+        color: var(--dt-green);
+        transform: translateY(-2px);
+      }
+
+      /* GALLERY */
+
+      .gallery-section {
+        margin-top: 26px;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 13px;
+      }
+
+      .gallery-image {
+        position: relative;
+        display: block;
+        width: 100%;
+        padding: 0;
+        overflow: hidden;
+        aspect-ratio: 16/10;
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        border-radius: 9px;
+        background: #101010;
+        cursor: zoom-in;
+      }
+
+      .gallery-image img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition:
+          transform 0.45s ease,
+          filter 0.3s ease;
+      }
+
+      .gallery-image:hover img {
+        transform: scale(1.055);
+        filter: brightness(0.72);
+      }
+
+      .gallery-image:after {
+        content: "\f52a";
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        color: #fff;
+        font: 25px "bootstrap-icons";
+        opacity: 0;
+        transition: opacity 0.25s ease;
+      }
+
+      .gallery-image:hover:after {
+        opacity: 1;
+      }
+
+      /* VIDEO */
+
+      .gallery-video {
+        grid-column: 1/-1;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        background: #050505;
+      }
+
+      .gallery-video video {
+        display: block;
+        width: 100%;
+        max-height: 610px;
+        aspect-ratio: 16/9;
+        object-fit: contain;
+        background: #000;
+      }
+
+      .gallery-caption {
+        margin-top: 10px;
+        color: #777;
+        font-size: 10px;
+        line-height: 1.6;
+      }
+
+      /* IMAGE LIGHTBOX */
+
+      .lightbox {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        max-width: none;
+        height: 100%;
+        max-height: none;
+        margin: 0;
+        padding: 22px;
+        border: 0;
+        background: transparent;
+      }
+
+      .lightbox[open] {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .lightbox::backdrop {
+        background: rgba(0, 0, 0, 0.93);
+        backdrop-filter: blur(7px);
+      }
+
+      .lightbox-inner {
+        position: relative;
+        max-width: 1100px;
+        max-height: 90vh;
+        animation: zoomIn 0.3s ease;
+      }
+
+      .lightbox-inner img {
+        display: block;
+        max-width: 100%;
+        max-height: 82vh;
+        object-fit: contain;
+        border-radius: 7px;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
+      }
+
+      .lightbox-close {
+        position: absolute;
+        top: -42px;
+        right: 0;
+        width: 34px;
+        height: 34px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        background: #191919;
+        color: #fff;
+        cursor: pointer;
+        transition: all 0.25s ease;
+      }
+
+      .lightbox-close:hover {
+        background: var(--dt-green);
+        color: #111;
+        transform: rotate(90deg);
+      }
+
+      @keyframes zoomIn {
+        from {
+          opacity: 0;
+          transform: scale(0.94);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      /* NOT FOUND */
+
+      .not-found {
+        padding: 55px 20px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        background: var(--dt-card);
+        text-align: center;
+      }
+
+      .not-found i {
+        display: block;
+        margin-bottom: 13px;
+        color: var(--dt-green);
+        font-size: 42px;
+      }
+
+      .not-found h2 {
+        color: #fff;
+        font:
+          700 22px "Raleway",
+          sans-serif;
+      }
+
+      .not-found p {
+        color: #999;
+        font-size: 12px;
+      }
+
+      /* RESPONSIVE */
+
+      @media (max-width: 991px) {
+        .detail-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .detail-info {
+          position: static;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .detail-section {
+          padding: 88px 0 55px;
+        }
+
+        .gallery-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .detail-panel,
+        .detail-info {
+          padding: 16px;
+        }
+
+        .detail-heading h2 {
+          font-size: 25px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .animated-line:after,
+        .gallery-image img,
+        .lightbox-inner,
+        .back-button {
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="portfolio-details-page">
+    <!-- HEADER -->
+    <header id="header" class="header d-flex align-items-center fixed-top">
+      <div
+        class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
+      >
+        <a href="index.html" class="logo d-flex align-items-center">
+          <h1 class="sitename">PORTFOLIO</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="portfolio.html" class="active">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="detail-section">
+        <div class="container">
+          <a href="portfolio.html" class="back-link">
+            <i class="bi bi-arrow-left"></i>
+            Kembali ke Portfolio
+          </a>
+
+          <div id="detailContent">
+            <!-- PROJECT HEADER -->
+
+            <div class="detail-heading" data-aos="fade-up">
+              <div class="detail-kicker">
+                <i class="bi bi-grid-1x2"></i>
+                <span id="projectCategory">PROJECT DETAILS</span>
+              </div>
+
+              <h2 id="projectTitle">Project Title</h2>
+
+              <p class="detail-subtitle" id="projectSubtitle"></p>
+
+              <div class="animated-line"></div>
+            </div>
+
+            <!-- PROJECT BODY -->
+
+            <div class="detail-layout">
+              <!-- LEFT CONTENT -->
+
+              <div data-aos="fade-up" data-aos-delay="100">
+                <h3 class="detail-section-title">Tentang Proyek</h3>
+
+                <div class="detail-panel">
+                  <p id="projectDescription"></p>
+                </div>
+
+                <h3 class="detail-section-title">
+                  Ruang Lingkup &amp; Informasi
+                </h3>
+
+                <div class="detail-panel">
+                  <ul class="detail-list" id="projectHighlights"></ul>
+                </div>
+
+                <!-- GALLERY -->
+
+                <div class="gallery-section">
+                  <h3 class="detail-section-title">Project Gallery</h3>
+
+                  <p class="detail-subtitle" style="margin-bottom: 15px">
+                    Klik gambar untuk melihat dokumentasi dalam ukuran lebih
+                    besar.
+                  </p>
+
+                  <div class="gallery-grid" id="projectGallery"></div>
+
+                  <p class="gallery-caption" id="galleryCaption"></p>
+                </div>
+              </div>
+
+              <!-- RIGHT SIDEBAR -->
+
+              <aside data-aos="fade-up" data-aos-delay="180">
+                <div class="detail-info">
+                  <h3>Project Information</h3>
+
+                  <div id="projectMeta"></div>
+
+                  <a href="portfolio.html" class="back-button">
+                    <i class="bi bi-arrow-left"></i>
+                    Semua Portfolio
+                  </a>
+                </div>
+              </aside>
+            </div>
+          </div>
+
+          <!-- NOT FOUND -->
+
+          <div class="not-found" id="projectNotFound" hidden>
+            <i class="bi bi-folder-x"></i>
+
+            <h2>Konten Tidak Ditemukan</h2>
+
+            <p>
+              Proyek yang Anda cari tidak tersedia. Silakan kembali ke halaman
+              Portfolio.
+            </p>
+
+            <a href="portfolio.html" class="back-button">
+              <i class="bi bi-arrow-left"></i>
+              Kembali ke Portfolio
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- IMAGE LIGHTBOX -->
+
+    <dialog
+      id="projectLightbox"
+      class="lightbox"
+      aria-label="Pratinjau gambar proyek"
+    >
+      <div class="lightbox-inner">
+        <button
+          type="button"
+          id="lightboxClose"
+          class="lightbox-close"
+          aria-label="Tutup gambar"
+        >
+          <i class="bi bi-x-lg"></i>
+        </button>
+
+        <img id="lightboxImage" src="" alt="Pratinjau dokumentasi proyek" />
+      </div>
+    </dialog>
+
+    <!-- SCROLL TOP -->
+
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      aria-label="Scroll to top"
+    >
+      <i class="bi bi-arrow-up-short"></i>
+    </a>
+
+    <div id="preloader"></div>
+
+    <!-- VENDOR JS -->
+
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- PROJECT DETAILS JAVASCRIPT -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const projects = {
+          /* ============================= */
+          /* PROJECT 1 - KANTIN QR CODE */
+          /* ============================= */
+
+          "kantin-qr": {
+            title: "Website Kantin QR Code",
+
+            category: "PROJECT · WEB DEVELOPMENT",
+
+            subtitle: "Pengembangan website kantin berbasis teknologi QR Code.",
+
+            description:
+              "Website Kantin QR Code merupakan proyek tugas besar di Universitas Langlangbuana. Proyek ini mengangkat pemanfaatan QR Code pada layanan kantin dan dikembangkan menggunakan PHP serta framework Laravel. Dokumentasi berikut memperlihatkan tampilan dan bagian proyek yang tersedia.",
+
+            meta: [
+              ["Kategori", "Project Akademik", "bi-mortarboard"],
+              ["Jenis", "Website Development", "bi-globe"],
+              ["Teknologi", "PHP, Laravel, QR Code", "bi-code-slash"],
+              ["Dokumentasi", "5 Gambar", "bi-images"],
+            ],
+
+            highlights: [
+              "Mengembangkan website kantin dengan memanfaatkan teknologi QR Code.",
+              "Mengimplementasikan bahasa pemrograman PHP dan framework Laravel.",
+              "Dikerjakan sebagai proyek tugas besar perkuliahan di Universitas Langlangbuana.",
+            ],
+
+            gallery: [
+              "assets/img/portfolio/KULIAH/Project%20Tugas/Kantin%20QR-CODE/Kantin-1.png",
+              "assets/img/portfolio/KULIAH/Project%20Tugas/Kantin%20QR-CODE/Kantin-2.jpg",
+              "assets/img/portfolio/KULIAH/Project%20Tugas/Kantin%20QR-CODE/Kantin-3.PNG",
+              "assets/img/portfolio/KULIAH/Project%20Tugas/Kantin%20QR-CODE/Kantin-4.PNG",
+              "assets/img/portfolio/KULIAH/Project%20Tugas/Kantin%20QR-CODE/Kantin-5.PNG",
+            ],
+          },
+
+          /* ============================= */
+          /* PROJECT 2 - MOBILE APP */
+          /* ============================= */
+
+          "mobile-app": {
+            title: "Mobile Application",
+
+            category: "PROJECT · MOBILE DEVELOPMENT",
+
+            subtitle:
+              "Pengembangan aplikasi mobile menggunakan Flutter dan Dart.",
+
+            description:
+              "Proyek pengembangan aplikasi mobile sebagai bagian dari kegiatan akademik. Pengembangan menggunakan framework Flutter dan bahasa pemrograman Dart. Halaman ini menampilkan dokumentasi visual yang tersedia untuk proyek tersebut.",
+
+            meta: [
+              ["Kategori", "Project Akademik", "bi-mortarboard"],
+              ["Jenis", "Mobile Application", "bi-phone"],
+              ["Teknologi", "Flutter dan Dart", "bi-code-slash"],
+              ["Dokumentasi", "1 Gambar", "bi-images"],
+            ],
+
+            highlights: [
+              "Pengembangan aplikasi mobile untuk kebutuhan proyek akademik.",
+              "Menggunakan framework Flutter.",
+              "Menggunakan bahasa pemrograman Dart.",
+            ],
+
+            gallery: [
+              "assets/img/portfolio/KULIAH/Project%20Tugas/Mobile%20App/App.png",
+            ],
+          },
+
+          /* ============================= */
+          /* PROJECT 3 - SHOPPE */
+          /* ============================= */
+
+          shoppe: {
+            title: "Project Shoppe",
+
+            category: "PROJECT · MOBILE APP",
+
+            subtitle: "Dokumentasi visual proyek aplikasi Shoppe.",
+
+            description:
+              "Halaman ini menampilkan dokumentasi antarmuka proyek Shoppe melalui dua gambar yang tersedia pada folder Project Tugas. Informasi teknis yang lebih spesifik dapat ditambahkan setelah detail implementasi proyek dilengkapi.",
+
+            meta: [
+              ["Kategori", "Project Akademik", "bi-mortarboard"],
+              ["Jenis", "Website,Mysql,Laravel.PHP", "bi-phone"],
+              ["Dokumentasi", "2 Gambar", "bi-images"],
+            ],
+
+            highlights: [
+              "Dokumentasi visual antarmuka proyek Shoppe.",
+              "Menampilkan dua gambar dari aset proyek yang tersedia.",
+            ],
+
+            gallery: [
+              "assets/img/portfolio/KULIAH/Project%20Tugas/Shoppe/Shoppe-1.png",
+              "assets/img/portfolio/KULIAH/Project%20Tugas/Shoppe/Shoppe-2.png",
+            ],
+          },
+
+          /* ============================= */
+          /* PROJECT 4 - FILM TKJ */
+          /* ============================= */
+
+          "film-tkj": {
+            title: "Film By TKJ 2",
+
+            category: "PROJECT · MULTIMEDIA",
+
+            subtitle:
+              "Karya video dari masa pendidikan Teknik Komputer dan Jaringan.",
+
+            description:
+              "Film By TKJ 2 merupakan karya video yang disimpan sebagai dokumentasi kegiatan multimedia selama masa pendidikan di jurusan Teknik Komputer dan Jaringan. Video dapat diputar langsung melalui pemutar pada halaman ini.",
+
+            meta: [
+              ["Kategori", "Project Multimedia", "bi-camera-video"],
+              ["Jenis Karya", "Video", "bi-play-circle"],
+              ["Format", "MP4", "bi-file-earmark-play"],
+            ],
+
+            highlights: [
+              "Karya video berjudul Film By TKJ 2.",
+              "Video tersedia untuk diputar langsung melalui browser.",
+            ],
+
+            gallery: [
+              {
+                type: "video",
+                src: "assets/img/portfolio/SMK/FILM/Film%20By%20TKJ%202.mp4",
+              },
+            ],
+          },
+
+          /* ============================= */
+          /* PROJECT 5 - BNSP */
+          /* ============================= */
+
+          bnsp: {
+            title: "SRS Aplikasi Perpustakaan Berbasis Web",
+
+            category: "PROJECT · BNSP · ASSOCIATE PROGRAMMER",
+
+            subtitle:
+              "Software Requirement Specification dengan sistem multi-peran Admin dan Pustakawan, disusun untuk Skema Okupasi Pemrogram Muda.",
+
+            description:
+              "Proyek ini berupa penyusunan Software Requirement Specification (SRS) untuk Aplikasi Perpustakaan Berbasis Web sebagai pemenuhan tugas sertifikasi Skema Okupasi Pemrogram Muda (Associate Programmer). Dokumen disusun oleh Aditya Perbawa, NPM 41155050220048, Program Studi Teknik Informatika, Fakultas Teknik, Universitas Langlangbuana, tahun 2026.\n\nSistem dirancang menggunakan mekanisme autentikasi (login) dan pemisahan dua peran pengguna, yaitu Admin dan Pustakawan. Admin memiliki kewenangan penuh untuk mengelola pengguna, buku, kategori, rak, peminjaman, pengembalian, dan denda. Pustakawan memiliki hak akses terbatas untuk melihat data peminjaman, pengembalian, dan denda, serta melakukan pencarian buku.\n\nDokumen mencakup pendahuluan, metodologi pengembangan Waterfall, analisis kebutuhan dan proses bisnis, spesifikasi kebutuhan sistem, rancangan proses dan antarmuka, implementasi, pseudocode, pengujian, deployment, serta lampiran kode program.",
+
+            meta: [
+              ["Kategori", "Project BNSP", "bi-award"],
+              [
+                "Dokumen",
+                "Software Requirement Specification (SRS)",
+                "bi-file-earmark-text",
+              ],
+              ["Aplikasi", "Perpustakaan Berbasis Web", "bi-globe"],
+              [
+                "Skema",
+                "Pemrogram Muda (Associate Programmer)",
+                "bi-patch-check",
+              ],
+              ["Peran Sistem", "Admin dan Pustakawan", "bi-people"],
+              ["Metodologi", "Waterfall", "bi-diagram-3"],
+              ["Penyusun", "Aditya Perbawa", "bi-person"],
+              ["NPM", "41155050220048", "bi-card-text"],
+              [
+                "Institusi",
+                "Universitas Langlangbuana · 2026",
+                "bi-mortarboard",
+              ],
+            ],
+
+            highlights: [
+              "Latar belakang: pengelolaan perpustakaan manual atau belum terintegrasi menyulitkan pencarian buku, pemantauan stok, dan pencatatan transaksi.",
+
+              "Pemisahan hak akses: Admin mengelola data pengguna, buku, kategori, rak, peminjaman, pengembalian, dan denda; Pustakawan memiliki akses baca pada peminjaman, pengembalian, dan denda serta dapat mencari buku.",
+
+              "Transaksi: satu transaksi peminjaman mencatat satu buku dan satu peminjam, beserta tanggal pinjam dan tanggal kembali yang ditentukan Admin.",
+
+              "Perhitungan denda: Rp10.000 per hari keterlambatan, dihitung dari selisih tanggal pengembalian aktual dengan tanggal kembali yang ditetapkan.",
+
+              "Pengelolaan stok: penghapusan peminjaman yang masih berjalan mengembalikan stok buku; data pengembalian yang berelasi ikut dihapus.",
+
+              "Batasan: tidak mencakup reservasi, perpanjangan pinjaman, pembayaran denda daring, notifikasi email/WhatsApp, maupun integrasi API eksternal.",
+
+              "Metodologi dan pembahasan meliputi Waterfall, analisis kebutuhan, rancangan proses dan antarmuka, implementasi, pseudocode, pengujian, dan deployment.",
+
+              "Perancangan juga mencakup kebutuhan fungsional dan nonfungsional, use case, serta rancangan basis data.",
+
+              "Ruang lingkup pengujian difokuskan pada fungsi inti; skala produksi seperti akses bersamaan dalam jumlah besar dan backup otomatis belum menjadi cakupan.",
+            ],
+
+            gallery: [
+              "assets/img/portfolio/KULIAH/Project%20Tugas/BNSP/BNSP-1.png",
+              "assets/img/portfolio/KULIAH/Project%20Tugas/BNSP/BNSP-2.png",
+            ],
+          },
+
+          /* ============================= */
+          /* EXPERIENCE 1 - KKNM */
+          /* ============================= */
+
+          kknm: {
+            title: "Pengalaman KKNM",
+
+            category: "EXPERIENCE · KULIAH",
+
+            subtitle: "Dokumentasi kegiatan Kuliah Kerja Nyata Mahasiswa.",
+
+            description:
+              "Halaman ini menampilkan dokumentasi kegiatan Kuliah Kerja Nyata Mahasiswa (KKNM) sebagai bagian dari pengalaman dan aktivitas selama masa perkuliahan. Galeri menyajikan foto dokumentasi kegiatan yang tersedia.",
+
+            meta: [
+              ["Kategori", "Experience", "bi-people"],
+              ["Kegiatan", "Kuliah Kerja Nyata Mahasiswa", "bi-mortarboard"],
+              ["Dokumentasi", "3 Foto", "bi-images"],
+            ],
+
+            highlights: [
+              "Dokumentasi kegiatan Kuliah Kerja Nyata Mahasiswa (KKNM).",
+              "Tiga foto dokumentasi tersedia pada galeri.",
+            ],
+
+            gallery: [
+              "assets/img/portfolio/KULIAH/Experience/KKNM/KKNM-1.jpeg",
+              "assets/img/portfolio/KULIAH/Experience/KKNM/KKNM-2.jpeg",
+              "assets/img/portfolio/KULIAH/Experience/KKNM/KKNM-3.jpeg",
+            ],
+          },
+
+          /* ============================= */
+          /* EXPERIENCE 2 - MAGANG KP */
+          /* ============================= */
+
+          "magang-kp": {
+            title: "Magang Kerja Praktik",
+
+            category: "EXPERIENCE · INTERNSHIP",
+
+            subtitle:
+              "Dokumentasi pengalaman kerja praktik di bidang teknologi informasi.",
+
+            description:
+              "Dokumentasi pengalaman Kerja Praktik yang berkaitan dengan penerapan teknologi informasi. Pengalaman yang dicantumkan dalam Resume mencakup pengembangan kembali aplikasi logistik berbasis web, pengelolaan database, pengembangan backend dan frontend, serta pengelolaan source code.",
+
+            meta: [
+              ["Kategori", "Experience", "bi-briefcase"],
+              ["Bidang", "Infrastruktur IT", "bi-pc-display"],
+              [
+                "Teknologi",
+                "PHP, Laravel, MySQL, Git, GitHub",
+                "bi-code-slash",
+              ],
+              ["Dokumentasi", "3 Foto", "bi-images"],
+            ],
+
+            highlights: [
+              "Mengembangkan kembali aplikasi logistik berbasis web untuk pengelolaan surat dan barang masuk maupun keluar.",
+              "Mengembangkan database MySQL serta backend menggunakan Laravel dan PHP.",
+              "Membangun tampilan frontend aplikasi yang responsif.",
+              "Mengelola source code menggunakan Git dan GitHub.",
+            ],
+
+            gallery: [
+              "assets/img/portfolio/KULIAH/Experience/Magang%20KP/KP-1.PNG",
+              "assets/img/portfolio/KULIAH/Experience/Magang%20KP/KP-2.jpeg",
+              "assets/img/portfolio/KULIAH/Experience/Magang%20KP/KP-3.jpeg",
+            ],
+          },
+
+          /* ============================= */
+          /* EXPERIENCE 3 - ORGANISASI */
+          /* ============================= */
+
+          organisasi: {
+            title: "Organisasi Himpunan Mahasiswa Teknik Informatika",
+
+            category: "EXPERIENCE · ORGANIZATION",
+
+            subtitle: "Kontribusi dalam Divisi Creative dan Divisi Lapangan.",
+
+            description:
+              "Dokumentasi aktivitas organisasi Himpunan Mahasiswa Teknik Informatika selama masa perkuliahan. Pengalaman yang dicantumkan meliputi keanggotaan Divisi Creative pada Oktober 2024 hingga Oktober 2025 serta keterlibatan dalam kegiatan SARASEHAN sebagai Divisi Lapangan pada Desember 2024 hingga Februari 2025.",
+
+            meta: [
+              ["Kategori", "Experience / Organization", "bi-people"],
+              [
+                "Organisasi",
+                "Himpunan Mahasiswa Teknik Informatika",
+                "bi-mortarboard",
+              ],
+              ["Divisi", "Creative", "bi-palette"],
+              [
+                "Periode Creative",
+                "Oktober 2024 - Oktober 2025",
+                "bi-calendar3",
+              ],
+              ["Divisi Kegiatan", "Lapangan · SARASEHAN", "bi-diagram-3"],
+              [
+                "Periode SARASEHAN",
+                "Desember 2024 - Februari 2025",
+                "bi-calendar3",
+              ],
+            ],
+
+            highlights: [
+              "Berkontribusi dalam menciptakan konten visual untuk berbagai kegiatan organisasi.",
+              "Mengembangkan konsep dan kampanye kreatif untuk mendukung kegiatan organisasi.",
+              "Melakukan persiapan dan instalasi tenda serta koordinasi pembagian area kegiatan SARASEHAN.",
+              "Memantau keamanan lokasi, membantu troubleshooting lapangan, dan mengelola logistik peralatan.",
+            ],
+
+            gallery: [
+              "assets/img/portfolio/KULIAH/Experience/Organisasi/Organisasi-1.jpeg",
+            ],
+          },
+
+          /* ============================= */
+          /* EXPERIENCE 4 - SMK KP */
+          /* ============================= */
+
+          "smk-kp": {
+            title: "Praktik Kerja SMK",
+
+            category: "EXPERIENCE · VOCATIONAL SCHOOL",
+
+            subtitle:
+              "Dokumentasi praktik selama pendidikan Teknik Komputer dan Jaringan.",
+
+            description:
+              "Dokumentasi kegiatan praktik selama menempuh pendidikan Teknik Komputer dan Jaringan di SMK Negeri 13 Bandung pada periode 2019–2022. Pendidikan tersebut mencakup dasar jaringan komputer, perangkat keras, sistem operasi, konfigurasi jaringan, troubleshooting, dan pemeliharaan komputer.",
+
+            meta: [
+              ["Kategori", "Experience", "bi-briefcase"],
+              ["Institusi", "SMK Negeri 13 Bandung", "bi-building"],
+              ["Jurusan", "Teknik Komputer dan Jaringan", "bi-pc-display"],
+              ["Periode Pendidikan", "2019 - 2022", "bi-calendar3"],
+              ["Dokumentasi", "5 Foto", "bi-images"],
+            ],
+
+            highlights: [
+              "Mempelajari dasar perangkat keras dan komponen komputer.",
+              "Melakukan pembelajaran instalasi sistem operasi dan perangkat lunak.",
+              "Mempelajari jaringan komputer serta konfigurasi jaringan.",
+              "Melakukan praktik troubleshooting dan pemeliharaan perangkat komputer.",
+            ],
+
+            gallery: [
+              "assets/img/portfolio/SMK/KP/KP-1.jpeg",
+              "assets/img/portfolio/SMK/KP/KP-2.jpg",
+              "assets/img/portfolio/SMK/KP/KP-3.jpg",
+              "assets/img/portfolio/SMK/KP/KP-4.jpg",
+              "assets/img/portfolio/SMK/KP/KP-5.jpg",
+            ],
+          },
+
+          /* ============================= */
+          /* EXPERIENCE 5 - UJIKOM CISCO */
+          /* ============================= */
+
+          "ujikom-cisco": {
+            title: "Uji Kompetensi Cisco",
+
+            category: "EXPERIENCE · NETWORKING",
+
+            subtitle:
+              "Dokumentasi Uji Kompetensi jurusan Teknik Komputer dan Jaringan.",
+
+            description:
+              "Dokumentasi Uji Kompetensi (UJIKOM) jurusan Teknik Komputer dan Jaringan di SMK Negeri 13 Bandung. Berdasarkan informasi Resume, UJIKOM diselesaikan pada tahun 2022 dan memperoleh hasil sempurna. Materi dokumentasi berkaitan dengan praktik jaringan Cisco.",
+
+            meta: [
+              ["Kategori", "Experience / Uji Kompetensi", "bi-patch-check"],
+              ["Institusi", "SMK Negeri 13 Bandung", "bi-building"],
+              ["Bidang", "Teknik Komputer dan Jaringan", "bi-pc-display"],
+              ["Materi", "Cisco Networking", "bi-diagram-3"],
+              ["Tahun", "2022", "bi-calendar3"],
+              ["Dokumentasi", "3 Gambar", "bi-images"],
+            ],
+
+            highlights: [
+              "Menyelesaikan Uji Kompetensi (UJIKOM) jurusan Teknik Komputer dan Jaringan.",
+              "Materi uji kompetensi berkaitan dengan Cisco Networking.",
+              "Memperoleh hasil sempurna berdasarkan informasi pencapaian tahun 2022.",
+            ],
+
+            gallery: [
+              "assets/img/portfolio/SMK/UJIKOM/UJIKOM-1.PNG",
+              "assets/img/portfolio/SMK/UJIKOM/UJIKOM-2.jpeg",
+              "assets/img/portfolio/SMK/UJIKOM/UJIKOM-3.jpeg",
+            ],
+          },
+        };
+
+        /* GET PROJECT FROM URL */
+
+        const params = new URLSearchParams(window.location.search);
+        const project = projects[params.get("project")];
+
+        const detailContent = document.getElementById("detailContent");
+        const notFound = document.getElementById("projectNotFound");
+
+        /* VALIDATE PROJECT */
+
+        if (!project) {
+          detailContent.hidden = true;
+          notFound.hidden = false;
+
+          document.title = "PORTFOLIO | Content Not Found";
+
+          return;
+        }
+
+        /* RENDER PROJECT HEADER */
+
+        document.title = "PORTFOLIO | " + project.title + " - Aditya Perbawa";
+
+        document.getElementById("projectCategory").textContent =
+          project.category;
+
+        document.getElementById("projectTitle").textContent = project.title;
+
+        document.getElementById("projectSubtitle").textContent =
+          project.subtitle;
+
+        document.getElementById("projectDescription").textContent =
+          project.description;
+
+        /* RENDER HIGHLIGHTS */
+
+        const highlights = document.getElementById("projectHighlights");
+
+        project.highlights.forEach(function (text) {
+          const li = document.createElement("li");
+
+          const icon = document.createElement("i");
+          icon.className = "bi bi-check-circle-fill";
+
+          const span = document.createElement("span");
+          span.textContent = text;
+
+          li.append(icon, span);
+
+          highlights.appendChild(li);
+        });
+
+        /* RENDER PROJECT INFORMATION */
+
+        const metaContainer = document.getElementById("projectMeta");
+
+        project.meta.forEach(function (item) {
+          const wrapper = document.createElement("div");
+          wrapper.className = "info-item";
+
+          const label = document.createElement("span");
+          label.className = "info-label";
+
+          const icon = document.createElement("i");
+          icon.className = "bi " + item[2];
+
+          const labelText = document.createElement("span");
+          labelText.textContent = item[0];
+
+          label.append(icon, labelText);
+
+          const value = document.createElement("span");
+          value.className = "info-value";
+          value.textContent = item[1];
+
+          wrapper.append(label, value);
+
+          metaContainer.appendChild(wrapper);
+        });
+
+        /* LIGHTBOX ELEMENTS */
+
+        const gallery = document.getElementById("projectGallery");
+
+        const lightbox = document.getElementById("projectLightbox");
+
+        const lightboxImage = document.getElementById("lightboxImage");
+
+        const lightboxClose = document.getElementById("lightboxClose");
+
+        /* OPEN LIGHTBOX */
+
+        function openLightbox(src, alt) {
+          lightboxImage.src = src;
+          lightboxImage.alt = alt;
+
+          lightbox.showModal();
+
+          lightboxClose.focus();
+        }
+
+        /* RENDER GALLERY */
+
+        project.gallery.forEach(function (item, index) {
+          /* IMAGE */
+
+          if (typeof item === "string") {
+            const button = document.createElement("button");
+
+            button.type = "button";
+            button.className = "gallery-image";
+
+            button.setAttribute(
+              "aria-label",
+              "Perbesar dokumentasi " + (index + 1),
+            );
+
+            const img = document.createElement("img");
+
+            img.src = item;
+
+            img.alt = project.title + " - dokumentasi " + (index + 1);
+
+            img.loading = "lazy";
+
+            img.addEventListener("error", function () {
+              button.remove();
+            });
+
+            button.appendChild(img);
+
+            button.addEventListener("click", function () {
+              openLightbox(img.src, img.alt);
+            });
+
+            gallery.appendChild(button);
+          } else if (item.type === "video") {
+            /* VIDEO */
+            const wrapper = document.createElement("div");
+
+            wrapper.className = "gallery-video";
+
+            const video = document.createElement("video");
+
+            video.controls = true;
+            video.preload = "metadata";
+            video.playsInline = true;
+
+            video.setAttribute("aria-label", project.title);
+
+            const source = document.createElement("source");
+
+            source.src = item.src;
+            source.type = "video/mp4";
+
+            video.appendChild(source);
+
+            wrapper.appendChild(video);
+
+            video.addEventListener("error", function () {
+              wrapper.innerHTML =
+                '<p style="padding:18px;color:#aaa;font-size:12px">' +
+                "Video tidak dapat dimuat. Periksa lokasi dan nama file video." +
+                "</p>";
+            });
+
+            gallery.appendChild(wrapper);
+          }
+        });
+
+        /* GALLERY CAPTION */
+
+        const galleryCaption = document.getElementById("galleryCaption");
+
+        function updateGalleryCaption() {
+          const count = gallery.querySelectorAll(".gallery-image").length;
+
+          const hasVideo = gallery.querySelector(".gallery-video");
+
+          if (count > 0) {
+            galleryCaption.textContent =
+              count + " foto dokumentasi. Klik foto untuk memperbesar.";
+          } else if (hasVideo) {
+            galleryCaption.textContent =
+              "Video tersedia untuk diputar pada halaman ini.";
+          } else {
+            galleryCaption.textContent = "Dokumentasi gambar tidak tersedia.";
+          }
+        }
+
+        updateGalleryCaption();
+
+        /* CLOSE LIGHTBOX */
+
+        lightboxClose.addEventListener("click", function () {
+          lightbox.close();
+        });
+
+        lightbox.addEventListener("click", function (event) {
+          if (event.target === lightbox) {
+            lightbox.close();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

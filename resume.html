@@ -1,0 +1,1101 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>PORTFOLIO | Resume - Aditya Perbawa</title>
+
+    <meta
+      name="description"
+      content="Resume Aditya Perbawa, lulusan S1 Teknik Informatika."
+    />
+    <meta
+      name="keywords"
+      content="Aditya Perbawa, Software Engineer, Data Analyst, IT Support"
+    />
+
+    <!-- Favicon -->
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+
+    <!-- Main CSS -->
+    <link href="assets/css/main.css" rel="stylesheet" />
+
+    <!-- ========================================= -->
+    <!-- CUSTOM RESUME CSS -->
+    <!-- ========================================= -->
+
+    <style>
+      :root {
+        --resume-green: #18d26e;
+        --resume-green-light: #8fffc0;
+        --resume-card: #191919;
+        --resume-border: rgba(255, 255, 255, 0.1);
+      }
+
+      /* RESUME SECTION */
+
+      .resume.section {
+        padding-top: 25px;
+        padding-bottom: 75px;
+      }
+
+      /* SECTION TITLES */
+
+      .resume .resume-title {
+        position: relative;
+        display: block;
+        border: none !important;
+        padding: 0 0 17px 0;
+        margin: 20px 0 22px;
+        font-family: "Raleway", sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        color: #fff;
+      }
+
+      .resume .resume-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 75px;
+        height: 3px;
+        border-radius: 10px;
+
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--resume-green),
+          var(--resume-green-light),
+          var(--resume-green),
+          transparent
+        );
+
+        background-size: 200% 100%;
+        animation: resumeGreenLine 3s linear infinite;
+      }
+
+      /* ACCORDION CARD */
+
+      .resume-entry {
+        position: relative;
+        overflow: hidden;
+
+        margin-bottom: 15px;
+
+        border: 1px solid var(--resume-border);
+        border-radius: 12px;
+
+        background: var(--resume-card);
+
+        transition:
+          border-color 0.35s ease,
+          background 0.35s ease,
+          transform 0.35s ease,
+          box-shadow 0.35s ease;
+      }
+
+      /* GREEN MOVING LINE */
+
+      .resume-entry::before {
+        content: "";
+
+        position: absolute;
+        top: 0;
+        left: -100%;
+
+        width: 100%;
+        height: 2px;
+
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--resume-green),
+          var(--resume-green-light),
+          var(--resume-green),
+          transparent
+        );
+
+        background-size: 200% 100%;
+
+        opacity: 0;
+
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+      }
+
+      .resume-entry:hover::before,
+      .resume-entry.is-open::before {
+        opacity: 1;
+        animation: resumeCardLine 2.5s linear infinite;
+      }
+
+      .resume-entry:hover {
+        border-color: rgba(24, 210, 110, 0.35);
+        transform: translateY(-2px);
+
+        box-shadow:
+          0 8px 25px rgba(0, 0, 0, 0.18),
+          0 0 12px rgba(24, 210, 110, 0.04);
+      }
+
+      .resume-entry.is-open {
+        border-color: rgba(24, 210, 110, 0.45);
+
+        box-shadow: 0 0 18px rgba(24, 210, 110, 0.06);
+      }
+
+      /* ACCORDION BUTTON */
+
+      .resume-toggle {
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 15px;
+
+        padding: 19px 20px;
+
+        border: none;
+        background: transparent;
+
+        color: #fff;
+        text-align: left;
+
+        cursor: pointer;
+      }
+
+      .resume-toggle:focus-visible {
+        outline: 2px solid var(--resume-green);
+        outline-offset: -4px;
+        border-radius: 12px;
+      }
+
+      /* LEFT CONTENT */
+
+      .resume-toggle-main {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        flex: 1;
+        min-width: 0;
+      }
+
+      .resume-entry-title {
+        display: block;
+
+        font-family: "Raleway", sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+
+        line-height: 1.5;
+        color: #fff;
+
+        transition: color 0.3s ease;
+      }
+
+      .resume-entry:hover .resume-entry-title,
+      .resume-entry.is-open .resume-entry-title {
+        color: var(--resume-green);
+      }
+
+      .resume-entry-meta {
+        display: block;
+
+        font-family: "Roboto", sans-serif;
+        font-size: 13px;
+
+        line-height: 1.5;
+        color: #aaa;
+      }
+
+      /* RIGHT ICON */
+
+      .resume-toggle-icon {
+        flex-shrink: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 34px;
+        height: 34px;
+
+        border: 1px solid rgba(24, 210, 110, 0.3);
+        border-radius: 50%;
+
+        color: var(--resume-green);
+
+        transition:
+          transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+          background 0.3s ease,
+          border-color 0.3s ease;
+      }
+
+      .resume-toggle-icon i {
+        font-size: 15px;
+        transition: transform 0.4s ease;
+      }
+
+      .resume-entry.is-open .resume-toggle-icon {
+        background: var(--resume-green);
+        border-color: var(--resume-green);
+        color: #101010;
+        transform: rotate(180deg);
+      }
+
+      /* ACCORDION PANEL */
+
+      .resume-panel {
+        display: grid;
+        grid-template-rows: 0fr;
+
+        transition: grid-template-rows 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      .resume-panel-inner {
+        min-height: 0;
+        overflow: hidden;
+
+        padding: 0 20px;
+
+        opacity: 0;
+        transform: translateY(-8px);
+
+        transition:
+          opacity 0.35s ease,
+          transform 0.4s ease,
+          padding 0.4s ease;
+      }
+
+      .resume-entry.is-open .resume-panel {
+        grid-template-rows: 1fr;
+      }
+
+      .resume-entry.is-open .resume-panel-inner {
+        padding: 0 20px 20px;
+
+        opacity: 1;
+        transform: translateY(0);
+
+        transition-delay: 0.05s;
+      }
+
+      /* PANEL SEPARATOR */
+
+      .resume-panel-inner::before {
+        content: "";
+
+        display: block;
+
+        width: 100%;
+        height: 1px;
+
+        margin-bottom: 15px;
+
+        background: linear-gradient(
+          90deg,
+          rgba(24, 210, 110, 0.45),
+          rgba(255, 255, 255, 0.06),
+          transparent
+        );
+      }
+
+      /* PANEL TEXT */
+
+      .resume-panel-inner p {
+        font-size: 14px;
+        line-height: 1.8;
+        color: #c7c7c7;
+
+        margin-bottom: 12px;
+      }
+
+      .resume-panel-inner p:last-child {
+        margin-bottom: 0;
+      }
+
+      .resume-panel-inner strong {
+        color: #fff;
+        font-weight: 600;
+      }
+
+      .resume-panel-inner em {
+        color: #aaa;
+      }
+
+      /* PANEL LIST */
+
+      .resume-panel-inner ul {
+        padding-left: 19px;
+        margin: 0;
+      }
+
+      .resume-panel-inner ul li {
+        padding-left: 3px;
+        margin-bottom: 9px;
+
+        font-size: 14px;
+        line-height: 1.7;
+
+        color: #c7c7c7;
+      }
+
+      .resume-panel-inner ul li::marker {
+        color: var(--resume-green);
+      }
+
+      /* SMALL GREEN LABEL */
+
+      .resume-tag {
+        display: inline-block;
+
+        padding: 5px 10px;
+        margin-bottom: 12px;
+
+        border: 1px solid rgba(24, 210, 110, 0.25);
+        border-radius: 5px;
+
+        background: rgba(24, 210, 110, 0.07);
+
+        color: var(--resume-green);
+        font-size: 11px;
+        font-weight: 600;
+
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+
+      /* KEYFRAMES */
+
+      @keyframes resumeGreenLine {
+        0% {
+          background-position: 100% 0;
+        }
+
+        100% {
+          background-position: -100% 0;
+        }
+      }
+
+      @keyframes resumeCardLine {
+        0% {
+          left: -100%;
+        }
+
+        100% {
+          left: 100%;
+        }
+      }
+
+      /* MOBILE RESPONSIVE */
+
+      @media (max-width: 767px) {
+        .resume.section {
+          padding-top: 10px;
+        }
+
+        .resume .resume-title {
+          font-size: 20px;
+          margin-top: 28px;
+        }
+
+        .resume-toggle {
+          padding: 16px;
+          gap: 10px;
+        }
+
+        .resume-entry-title {
+          font-size: 14px;
+        }
+
+        .resume-entry-meta {
+          font-size: 12px;
+        }
+
+        .resume-panel-inner {
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+
+        .resume-entry.is-open .resume-panel-inner {
+          padding: 0 16px 17px;
+        }
+
+        .resume-panel-inner p,
+        .resume-panel-inner ul li {
+          font-size: 13px;
+        }
+
+        .resume-toggle-icon {
+          width: 30px;
+          height: 30px;
+        }
+      }
+
+      /* REDUCE ANIMATION FOR ACCESSIBILITY */
+
+      @media (prefers-reduced-motion: reduce) {
+        .resume-entry,
+        .resume-toggle-icon,
+        .resume-panel,
+        .resume-panel-inner,
+        .resume .resume-title::after {
+          transition: none !important;
+          animation: none !important;
+        }
+
+        .resume-entry::before {
+          animation: none !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="resume-page">
+    <!-- HEADER -->
+
+    <header id="header" class="header d-flex align-items-center fixed-top">
+      <div
+        class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
+      >
+        <a href="index.html" class="logo d-flex align-items-center">
+          <h1 class="sitename">PORTFOLIO</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="resume.html" class="active">Resume</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </header>
+
+    <!-- /HEADER -->
+
+    <main class="main">
+      <!-- PAGE TITLE -->
+
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Resume</h2>
+      </div>
+
+      <!-- /PAGE TITLE -->
+
+      <!-- RESUME SECTION -->
+
+      <section id="resume" class="resume section">
+        <div class="container">
+          <div class="row gy-4">
+            <!-- ================================= -->
+            <!-- LEFT COLUMN -->
+            <!-- ================================= -->
+
+            <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
+              <!--  SUMMARY -->
+
+              <h3 class="resume-title">Summary</h3>
+
+              <article class="resume-entry">
+                <button
+                  type="button"
+                  class="resume-toggle"
+                  aria-expanded="false"
+                  aria-controls="resume-summary"
+                >
+                  <span class="resume-toggle-main">
+                    <span class="resume-entry-title"> Aditya Perbawa </span>
+
+                    <span class="resume-entry-meta"> Profile </span>
+                  </span>
+
+                  <span class="resume-toggle-icon">
+                    <i class="bi bi-chevron-down"></i>
+                  </span>
+                </button>
+
+                <div
+                  class="resume-panel"
+                  id="resume-summary"
+                  aria-hidden="true"
+                >
+                  <div class="resume-panel-inner">
+                    <span class="resume-tag">Profile</span>
+
+                    <p>
+                      Lulusan S1 Teknik Informatika dengan pengalaman praktik di
+                      bidang pengembangan aplikasi, web development,
+                      administrasi jaringan, dan infrastruktur IT. Memiliki
+                      kemampuan dalam pemrograman, pengelolaan database, serta
+                      troubleshooting komputer. Memiliki semangat belajar
+                      tinggi, adaptif, dan berorientasi pada pemecahan masalah
+                      melalui pemanfaatan teknologi.
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              <!-- EDUCATION -->
+
+              <h3 class="resume-title">Education</h3>
+
+              <!-- UNIVERSITY -->
+
+              <article class="resume-entry">
+                <button
+                  type="button"
+                  class="resume-toggle"
+                  aria-expanded="false"
+                  aria-controls="resume-university"
+                >
+                  <span class="resume-toggle-main">
+                    <span class="resume-entry-title">
+                      S1 Teknik Informatika
+                    </span>
+
+                    <span class="resume-entry-meta">
+                      Universitas Langlangbuana · 2022 - 2026 · Lulus
+                    </span>
+                  </span>
+
+                  <span class="resume-toggle-icon">
+                    <i class="bi bi-chevron-down"></i>
+                  </span>
+                </button>
+
+                <div
+                  class="resume-panel"
+                  id="resume-university"
+                  aria-hidden="true"
+                >
+                  <div class="resume-panel-inner">
+                    <span class="resume-tag">Bachelor's Degree</span>
+
+                    <p>
+                      <strong>Universitas Langlangbuana</strong>
+                    </p>
+
+                    <p>
+                      Menyelesaikan pendidikan sarjana di bidang Teknik
+                      Informatika dengan fokus pada pengembangan perangkat
+                      lunak, pemrograman, pengembangan aplikasi, pengelolaan
+                      database, dan pemanfaatan teknologi informasi.
+                    </p>
+
+                    <p><strong>Periode:</strong> 2022 - 2026</p>
+
+                    <p><strong>Status:</strong> Lulus</p>
+                  </div>
+                </div>
+              </article>
+
+              <!-- SMK -->
+
+              <article class="resume-entry">
+                <button
+                  type="button"
+                  class="resume-toggle"
+                  aria-expanded="false"
+                  aria-controls="resume-smk"
+                >
+                  <span class="resume-toggle-main">
+                    <span class="resume-entry-title">
+                      Teknik Komputer dan Jaringan
+                    </span>
+
+                    <span class="resume-entry-meta">
+                      SMK Negeri 13 Bandung · 2019 - 2022 · Lulus
+                    </span>
+                  </span>
+
+                  <span class="resume-toggle-icon">
+                    <i class="bi bi-chevron-down"></i>
+                  </span>
+                </button>
+
+                <div class="resume-panel" id="resume-smk" aria-hidden="true">
+                  <div class="resume-panel-inner">
+                    <span class="resume-tag">Vocational Education</span>
+
+                    <p>
+                      <strong>SMK Negeri 13 Bandung</strong>
+                    </p>
+
+                    <p>
+                      Menyelesaikan pendidikan kejuruan dengan mempelajari dasar
+                      jaringan komputer, perangkat keras, sistem operasi,
+                      konfigurasi jaringan, serta praktik troubleshooting dan
+                      pemeliharaan komputer.
+                    </p>
+
+                    <p><strong>Periode:</strong> 2019 - 2022</p>
+
+                    <p><strong>Status:</strong> Lulus</p>
+                  </div>
+                </div>
+              </article>
+
+              <!-- ORGANIZATIONAL EXPERIENCE -->
+
+              <h3 class="resume-title">Organizational Experience</h3>
+
+              <!-- CREATIVE DIVISION -->
+
+              <article class="resume-entry">
+                <button
+                  type="button"
+                  class="resume-toggle"
+                  aria-expanded="false"
+                  aria-controls="resume-creative"
+                >
+                  <span class="resume-toggle-main">
+                    <span class="resume-entry-title">
+                      Himpunan Mahasiswa Teknik Informatika
+                    </span>
+
+                    <span class="resume-entry-meta">
+                      Divisi Creative · Okt 2024 - Okt 2025
+                    </span>
+                  </span>
+
+                  <span class="resume-toggle-icon">
+                    <i class="bi bi-chevron-down"></i>
+                  </span>
+                </button>
+
+                <div
+                  class="resume-panel"
+                  id="resume-creative"
+                  aria-hidden="true"
+                >
+                  <div class="resume-panel-inner">
+                    <span class="resume-tag">Creative Division</span>
+
+                    <p><strong>Posisi:</strong> Anggota - Divisi Creative</p>
+
+                    <p><strong>Periode:</strong> Oktober 2024 - Oktober 2025</p>
+
+                    <ul>
+                      <li>
+                        Berkontribusi dalam menciptakan konten visual untuk
+                        berbagai kegiatan organisasi.
+                      </li>
+
+                      <li>
+                        Mengembangkan konsep dan kampanye kreatif untuk
+                        mendukung kegiatan organisasi.
+                      </li>
+
+                      <li>
+                        Menggabungkan kreativitas desain dengan pemahaman
+                        teknologi untuk mendukung program-program kemahasiswaan.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </article>
+
+              <!-- FIELD DIVISION -->
+
+              <article class="resume-entry">
+                <button
+                  type="button"
+                  class="resume-toggle"
+                  aria-expanded="false"
+                  aria-controls="resume-sarasehan"
+                >
+                  <span class="resume-toggle-main">
+                    <span class="resume-entry-title">
+                      Himpunan Mahasiswa Teknik Informatika - SARASEHAN
+                    </span>
+
+                    <span class="resume-entry-meta">
+                      Divisi Lapangan · Des 2024 - Feb 2025
+                    </span>
+                  </span>
+
+                  <span class="resume-toggle-icon">
+                    <i class="bi bi-chevron-down"></i>
+                  </span>
+                </button>
+
+                <div
+                  class="resume-panel"
+                  id="resume-sarasehan"
+                  aria-hidden="true"
+                >
+                  <div class="resume-panel-inner">
+                    <span class="resume-tag">Field Division</span>
+
+                    <p><strong>Posisi:</strong> Divisi Lapangan</p>
+
+                    <p>
+                      <strong>Periode:</strong> Desember 2024 - Februari 2025
+                    </p>
+
+                    <ul>
+                      <li>
+                        Melakukan persiapan dan instalasi tenda serta koordinasi
+                        pembagian area kegiatan.
+                      </li>
+
+                      <li>
+                        Memantau keamanan lokasi dan melakukan troubleshooting
+                        permasalahan di lapangan.
+                      </li>
+
+                      <li>
+                        Mengelola logistik peralatan dan melakukan koordinasi
+                        dengan divisi lainnya.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- ================================= -->
+            <!-- RIGHT COLUMN -->
+            <!-- ================================= -->
+
+            <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
+              <!--  EXPERIENCE -->
+
+              <h3 class="resume-title">Experience</h3>
+
+              <!-- PLO EXPERIENCE -->
+
+              <article class="resume-entry">
+                <button
+                  type="button"
+                  class="resume-toggle"
+                  aria-expanded="false"
+                  aria-controls="resume-plo"
+                >
+                  <span class="resume-toggle-main">
+                    <span class="resume-entry-title">
+                      Pusat Layanan Operasional Pendataan Daerah Provinsi Jawa
+                      Barat
+                    </span>
+
+                    <span class="resume-entry-meta">
+                      Praktik Kerja Lapangan · Pengelolaan Sistem Informasi
+                      Digital
+                    </span>
+                  </span>
+
+                  <span class="resume-toggle-icon">
+                    <i class="bi bi-chevron-down"></i>
+                  </span>
+                </button>
+
+                <div class="resume-panel" id="resume-plo" aria-hidden="true">
+                  <div class="resume-panel-inner">
+                    <span class="resume-tag">Internship Experience</span>
+
+                    <p><strong>Posisi:</strong> Praktik Kerja Lapangan (PKL)</p>
+
+                    <p>
+                      <strong>Divisi:</strong> Pengelolaan Sistem Informasi
+                      Digital
+                    </p>
+
+                    <ul>
+                      <li>
+                        <strong>Network Administration:</strong>
+                        Melakukan konfigurasi dan administrasi jaringan
+                        menggunakan perangkat router Cisco dan MikroTik.
+                      </li>
+
+                      <li>
+                        <strong>Documentation Management:</strong>
+                        Menyusun notulen rapat dan dokumentasi Standard
+                        Operating Procedure (SOP) sistem menggunakan Microsoft
+                        Word.
+                      </li>
+
+                      <li>
+                        <strong>Inventory &amp; Asset Management:</strong>
+                        Melakukan pencatatan dan pengelolaan inventaris serta
+                        alat tulis kantor (ATK) menggunakan Microsoft Excel.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </article>
+
+              <!-- BPBD EXPERIENCE -->
+
+              <article class="resume-entry">
+                <button
+                  type="button"
+                  class="resume-toggle"
+                  aria-expanded="false"
+                  aria-controls="resume-bpbd"
+                >
+                  <span class="resume-toggle-main">
+                    <span class="resume-entry-title">
+                      Badan Penanggulangan Bencana Daerah Provinsi Jawa Barat
+                    </span>
+
+                    <span class="resume-entry-meta">
+                      Magang Kerja Praktik · Bagian Infrastruktur IT
+                    </span>
+                  </span>
+
+                  <span class="resume-toggle-icon">
+                    <i class="bi bi-chevron-down"></i>
+                  </span>
+                </button>
+
+                <div class="resume-panel" id="resume-bpbd" aria-hidden="true">
+                  <div class="resume-panel-inner">
+                    <span class="resume-tag">IT Infrastructure</span>
+
+                    <p><strong>Posisi:</strong> Magang Kerja Praktik</p>
+
+                    <p><strong>Bagian:</strong> Infrastruktur IT</p>
+
+                    <ul>
+                      <li>
+                        Melakukan pengembangan kembali (redevelopment) aplikasi
+                        logistik berbasis web untuk pengelolaan surat dan barang
+                        masuk maupun keluar.
+                      </li>
+
+                      <li>
+                        Mengembangkan dan mengelola database MySQL serta backend
+                        menggunakan Laravel dan PHP.
+                      </li>
+
+                      <li>
+                        Membangun tampilan frontend aplikasi yang responsif dan
+                        mudah digunakan.
+                      </li>
+
+                      <li>
+                        Mengelola source code dan proses pengembangan aplikasi
+                        menggunakan Git dan GitHub.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </article>
+
+              <!-- ACADEMIC PROJECTS -->
+
+              <h3 class="resume-title">Academic Projects</h3>
+
+              <!-- QR CODE PROJECT -->
+
+              <article class="resume-entry">
+                <button
+                  type="button"
+                  class="resume-toggle"
+                  aria-expanded="false"
+                  aria-controls="resume-canteen"
+                >
+                  <span class="resume-toggle-main">
+                    <span class="resume-entry-title">
+                      Website Kantin Berbasis QR Code
+                    </span>
+
+                    <span class="resume-entry-meta">
+                      Universitas Langlangbuana · Proyek Tugas Besar
+                    </span>
+                  </span>
+
+                  <span class="resume-toggle-icon">
+                    <i class="bi bi-chevron-down"></i>
+                  </span>
+                </button>
+
+                <div
+                  class="resume-panel"
+                  id="resume-canteen"
+                  aria-hidden="true"
+                >
+                  <div class="resume-panel-inner">
+                    <span class="resume-tag">Web Development</span>
+
+                    <p>
+                      <strong>Proyek:</strong>
+                      Pengembangan Website Kantin Berbasis QR Code.
+                    </p>
+
+                    <p><strong>Instansi:</strong> Universitas Langlangbuana</p>
+
+                    <ul>
+                      <li>
+                        Mengembangkan website kantin dengan memanfaatkan
+                        teknologi QR Code.
+                      </li>
+
+                      <li>
+                        Mengimplementasikan bahasa pemrograman PHP dengan
+                        framework Laravel.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </article>
+
+              <!-- MOBILE PROJECT -->
+
+              <article class="resume-entry">
+                <button
+                  type="button"
+                  class="resume-toggle"
+                  aria-expanded="false"
+                  aria-controls="resume-mobile"
+                >
+                  <span class="resume-toggle-main">
+                    <span class="resume-entry-title">
+                      Pengembangan Aplikasi Mobile
+                    </span>
+
+                    <span class="resume-entry-meta">
+                      Proyek Akademik · Flutter &amp; Dart
+                    </span>
+                  </span>
+
+                  <span class="resume-toggle-icon">
+                    <i class="bi bi-chevron-down"></i>
+                  </span>
+                </button>
+
+                <div class="resume-panel" id="resume-mobile" aria-hidden="true">
+                  <div class="resume-panel-inner">
+                    <span class="resume-tag">Mobile Development</span>
+
+                    <p><strong>Proyek:</strong> Pengembangan Aplikasi Mobile</p>
+
+                    <ul>
+                      <li>
+                        Mengembangkan aplikasi mobile menggunakan framework
+                        Flutter dan bahasa pemrograman Dart.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- /RESUME SECTION -->
+    </main>
+
+    <!-- SCROLL TOP -->
+
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      aria-label="Scroll to top"
+    >
+      <i class="bi bi-arrow-up-short"></i>
+    </a>
+
+    <!-- PRELOADER -->
+
+    <div id="preloader"></div>
+
+    <!-- VENDOR JS -->
+
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+
+    <!-- MAIN JS -->
+
+    <script src="assets/js/main.js"></script>
+
+    <!-- ========================================= -->
+    <!-- RESUME ACCORDION JAVASCRIPT -->
+    <!-- ========================================= -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const resumeButtons = document.querySelectorAll(".resume-toggle");
+
+        resumeButtons.forEach(function (button) {
+          button.addEventListener("click", function () {
+            const entry = button.closest(".resume-entry");
+            const panelId = button.getAttribute("aria-controls");
+            const panel = document.getElementById(panelId);
+
+            if (!entry || !panel) {
+              return;
+            }
+
+            const isCurrentlyOpen =
+              button.getAttribute("aria-expanded") === "true";
+
+            // Toggle accordion
+
+            if (isCurrentlyOpen) {
+              button.setAttribute("aria-expanded", "false");
+
+              panel.setAttribute("aria-hidden", "true");
+
+              entry.classList.remove("is-open");
+            } else {
+              button.setAttribute("aria-expanded", "true");
+
+              panel.setAttribute("aria-hidden", "false");
+
+              entry.classList.add("is-open");
+            }
+          });
+        });
+
+        // Keyboard accessibility: Escape closes an open panel
+
+        document.querySelectorAll(".resume-entry").forEach(function (entry) {
+          entry.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+              const button = entry.querySelector(".resume-toggle");
+
+              if (button && button.getAttribute("aria-expanded") === "true") {
+                button.click();
+                button.focus();
+              }
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1017 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>PORTFOLIO | Contact - Aditya Perbawa</title>
+
+    <meta
+      name="description"
+      content="Hubungi Aditya Perbawa melalui WhatsApp, Gmail, LinkedIn, Instagram, dan GitHub."
+    />
+    <meta
+      name="keywords"
+      content="Aditya Perbawa, Contact, WhatsApp, Gmail, LinkedIn"
+    />
+
+    <!-- Favicon -->
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+
+    <!-- Main CSS -->
+    <link href="assets/css/main.css" rel="stylesheet" />
+
+    <!-- ========================================= -->
+    <!-- CUSTOM CONTACT CSS -->
+    <!-- ========================================= -->
+
+    <style>
+      :root {
+        --contact-green: #18d26e;
+        --contact-green-light: #8fffc0;
+        --contact-card: #191919;
+      }
+
+      /* CONTACT SECTION */
+
+      .contact.section {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        min-height: 75vh;
+      }
+
+      .contact-social-wrap {
+        max-width: 1050px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .contact-intro {
+        color: #aaa;
+        font-size: 15px;
+        margin-bottom: 35px;
+      }
+
+      /* CONTACT GRID */
+
+      .contact-methods {
+        display: grid;
+
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+
+        gap: 18px;
+
+        width: 100%;
+      }
+
+      /* CONTACT CARD */
+
+      .contact-card {
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        min-height: 175px;
+        padding: 25px 12px;
+
+        overflow: hidden;
+
+        background: var(--contact-card);
+
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        border-radius: 15px;
+
+        color: #fff;
+        text-decoration: none;
+
+        cursor: pointer;
+
+        transition:
+          transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+          border-color 0.35s ease,
+          box-shadow 0.35s ease,
+          background 0.35s ease;
+      }
+
+      /* MOVING GREEN LINE */
+
+      .contact-card::before {
+        content: "";
+
+        position: absolute;
+
+        top: 0;
+        left: -100%;
+
+        width: 100%;
+        height: 2px;
+
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--contact-green),
+          var(--contact-green-light),
+          var(--contact-green),
+          transparent
+        );
+
+        opacity: 0;
+
+        pointer-events: none;
+      }
+
+      .contact-card:hover::before,
+      .contact-card:focus-visible::before {
+        opacity: 1;
+        animation: contactLine 2s linear infinite;
+      }
+
+      @keyframes contactLine {
+        0% {
+          left: -100%;
+        }
+
+        100% {
+          left: 100%;
+        }
+      }
+
+      /* HOVER */
+
+      .contact-card:hover {
+        transform: translateY(-8px);
+
+        border-color: rgba(24, 210, 110, 0.5);
+
+        background: #202020;
+
+        box-shadow:
+          0 12px 30px rgba(0, 0, 0, 0.25),
+          0 0 18px rgba(24, 210, 110, 0.07);
+      }
+
+      .contact-card:active {
+        transform: translateY(-2px) scale(0.96);
+      }
+
+      .contact-card:focus-visible {
+        outline: 2px solid var(--contact-green);
+        outline-offset: 4px;
+      }
+
+      /* ICON */
+
+      .contact-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 58px;
+        height: 58px;
+
+        margin-bottom: 15px;
+
+        border-radius: 50%;
+
+        background: rgba(24, 210, 110, 0.08);
+
+        color: var(--contact-green);
+
+        transition:
+          transform 0.4s ease,
+          background 0.4s ease,
+          box-shadow 0.4s ease;
+      }
+
+      .contact-icon i {
+        font-size: 27px;
+      }
+
+      .contact-card:hover .contact-icon {
+        transform: scale(1.12) rotate(-5deg);
+
+        background: var(--contact-green);
+
+        color: #101010;
+
+        box-shadow: 0 0 22px rgba(24, 210, 110, 0.25);
+      }
+
+      /* CONTACT LABEL */
+
+      .contact-name {
+        font-family: "Raleway", sans-serif;
+
+        color: #fff;
+
+        font-size: 15px;
+        font-weight: 700;
+
+        margin-bottom: 7px;
+      }
+
+      /* CLICK HINT */
+
+      .contact-hint {
+        display: block;
+
+        color: #777;
+
+        font-size: 10px;
+        font-weight: 600;
+
+        letter-spacing: 1px;
+        text-transform: uppercase;
+
+        opacity: 0.7;
+
+        transition:
+          color 0.3s ease,
+          opacity 0.3s ease,
+          transform 0.3s ease;
+      }
+
+      .contact-card:hover .contact-hint {
+        color: var(--contact-green);
+
+        opacity: 1;
+
+        transform: translateY(-2px);
+      }
+
+      /* ========================================= */
+      /* MODAL / POPUP */
+      /* ========================================= */
+
+      .contact-modal {
+        position: fixed;
+
+        inset: 0;
+
+        width: 100%;
+        max-width: none;
+        height: 100%;
+        max-height: none;
+
+        margin: 0;
+        padding: 20px;
+
+        border: none;
+
+        background: transparent;
+
+        color: #fff;
+
+        overflow: auto;
+      }
+
+      .contact-modal[open] {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        animation: modalFadeIn 0.3s ease;
+      }
+
+      /* BACKGROUND BLUR */
+
+      .contact-modal::backdrop {
+        background: rgba(0, 0, 0, 0.82);
+
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+
+        animation: backdropFade 0.3s ease;
+      }
+
+      /* MODAL CARD */
+
+      .contact-modal-card {
+        position: relative;
+
+        width: 100%;
+        max-width: 430px;
+
+        padding: 40px 30px 35px;
+
+        text-align: center;
+
+        background: #191919;
+
+        border: 1px solid rgba(24, 210, 110, 0.3);
+
+        border-radius: 18px;
+
+        box-shadow:
+          0 20px 70px rgba(0, 0, 0, 0.6),
+          0 0 25px rgba(24, 210, 110, 0.06);
+
+        animation: modalZoomIn 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      /* MODAL GREEN TOP LINE */
+
+      .contact-modal-card::before {
+        content: "";
+
+        position: absolute;
+
+        top: 0;
+        left: 15%;
+
+        width: 70%;
+        height: 2px;
+
+        border-radius: 10px;
+
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--contact-green),
+          var(--contact-green-light),
+          var(--contact-green),
+          transparent
+        );
+
+        background-size: 200% 100%;
+
+        animation: modalGreenLine 3s linear infinite;
+      }
+
+      @keyframes modalGreenLine {
+        from {
+          background-position: 100% 0;
+        }
+
+        to {
+          background-position: -100% 0;
+        }
+      }
+
+      /* CLOSE BUTTON */
+
+      .contact-modal-close {
+        position: absolute;
+
+        top: 13px;
+        right: 13px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 36px;
+        height: 36px;
+
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 50%;
+
+        background: #242424;
+
+        color: #aaa;
+
+        cursor: pointer;
+
+        transition:
+          transform 0.3s ease,
+          background 0.3s ease,
+          color 0.3s ease;
+      }
+
+      .contact-modal-close:hover {
+        transform: rotate(90deg);
+
+        background: var(--contact-green);
+
+        color: #101010;
+      }
+
+      .contact-modal-close i {
+        font-size: 20px;
+      }
+
+      /* MODAL ICON */
+
+      .contact-modal-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 75px;
+        height: 75px;
+
+        margin: 0 auto 20px;
+
+        border-radius: 50%;
+
+        background: rgba(24, 210, 110, 0.1);
+
+        color: var(--contact-green);
+
+        box-shadow: 0 0 25px rgba(24, 210, 110, 0.08);
+      }
+
+      .contact-modal-icon i {
+        font-size: 35px;
+      }
+
+      /* MODAL TEXT */
+
+      .contact-modal-title {
+        font-family: "Raleway", sans-serif;
+
+        font-size: 23px;
+        font-weight: 700;
+
+        color: #fff;
+
+        margin-bottom: 10px;
+      }
+
+      .contact-modal-description {
+        font-size: 13px;
+
+        line-height: 1.7;
+
+        color: #999;
+
+        margin-bottom: 25px;
+      }
+
+      /* PLAIN CONTACT VALUE */
+
+      .contact-value-box {
+        display: block;
+
+        width: 100%;
+
+        padding: 17px 12px;
+
+        border: 1px solid rgba(24, 210, 110, 0.25);
+
+        border-radius: 10px;
+
+        background: rgba(24, 210, 110, 0.06);
+
+        color: var(--contact-green-light);
+
+        font-size: 17px;
+        font-weight: 600;
+
+        letter-spacing: 0.3px;
+
+        overflow-wrap: anywhere;
+        user-select: text;
+      }
+
+      .contact-modal-note {
+        font-size: 11px;
+
+        color: #777;
+
+        margin-top: 17px;
+        margin-bottom: 0;
+      }
+
+      /* MODAL ANIMATIONS */
+
+      @keyframes modalFadeIn {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes backdropFade {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes modalZoomIn {
+        from {
+          opacity: 0;
+          transform: scale(0.88) translateY(18px);
+        }
+
+        to {
+          opacity: 1;
+          transform: scale(1) translateY(0);
+        }
+      }
+
+      /* RESPONSIVE */
+
+      @media (max-width: 991px) {
+        .contact-methods {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 576px) {
+        .contact.section {
+          padding-top: 85px;
+          padding-bottom: 60px;
+        }
+
+        .contact-methods {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+
+          gap: 12px;
+        }
+
+        .contact-card {
+          min-height: 150px;
+          padding: 20px 8px;
+        }
+
+        .contact-icon {
+          width: 50px;
+          height: 50px;
+        }
+
+        .contact-icon i {
+          font-size: 23px;
+        }
+
+        .contact-name {
+          font-size: 14px;
+        }
+
+        .contact-modal-card {
+          padding: 40px 20px 28px;
+        }
+
+        .contact-modal-title {
+          font-size: 21px;
+        }
+
+        .contact-value-box {
+          font-size: 15px;
+        }
+      }
+
+      /* REDUCED MOTION */
+
+      @media (prefers-reduced-motion: reduce) {
+        .contact-card,
+        .contact-icon,
+        .contact-hint,
+        .contact-modal-card,
+        .contact-modal-close {
+          transition: none !important;
+          animation: none !important;
+        }
+
+        .contact-card::before,
+        .contact-modal-card::before {
+          animation: none !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="contact-page">
+    <!-- ========================================= -->
+    <!-- HEADER -->
+    <!-- ========================================= -->
+
+    <header id="header" class="header d-flex align-items-center fixed-top">
+      <div
+        class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
+      >
+        <a href="index.html" class="logo d-flex align-items-center">
+          <h1 class="sitename">PORTFOLIO</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="about.html">About Me</a></li>
+
+            <li><a href="resume.html">Resume</a></li>
+
+            <li><a href="portfolio.html">Portfolio</a></li>
+
+            <li><a href="contact.html" class="active">Contact</a></li>
+          </ul>
+
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </header>
+
+    <!-- /HEADER -->
+
+    <main class="main">
+      <!-- ========================================= -->
+      <!-- CONTACT SECTION -->
+      <!-- ========================================= -->
+
+      <section id="contact" class="contact section">
+        <div class="container" data-aos="fade-up">
+          <!-- TITLE -->
+
+          <div class="section-title">
+            <h2>Contact</h2>
+          </div>
+
+          <div class="contact-social-wrap">
+            <!-- CONTACT CARDS -->
+
+            <div class="contact-methods">
+              <!-- WHATSAPP -->
+
+              <button
+                type="button"
+                class="contact-card js-contact-modal"
+                data-contact-type="whatsapp"
+                aria-label="Lihat nomor WhatsApp"
+              >
+                <span class="contact-icon">
+                  <i class="bi bi-whatsapp"></i>
+                </span>
+
+                <span class="contact-name">WhatsApp</span>
+
+                <span class="contact-hint"> CLICK TO VIEW </span>
+              </button>
+
+              <!-- GMAIL -->
+
+              <button
+                type="button"
+                class="contact-card js-contact-modal"
+                data-contact-type="gmail"
+                aria-label="Lihat alamat Gmail"
+              >
+                <span class="contact-icon">
+                  <i class="bi bi-envelope-fill"></i>
+                </span>
+
+                <span class="contact-name">Gmail</span>
+
+                <span class="contact-hint"> CLICK TO VIEW </span>
+              </button>
+
+              <!-- LINKEDIN -->
+
+              <!-- Ganti # dengan URL profil LinkedIn Anda -->
+
+              <a
+                href="https://www.linkedin.com/in/aditya-perbawa/"
+                class="contact-card external-contact-link"
+                data-platform="LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Buka LinkedIn"
+              >
+                <span class="contact-icon">
+                  <i class="bi bi-linkedin"></i>
+                </span>
+
+                <span class="contact-name">LinkedIn</span>
+                <span class="contact-hint">CLICK TO OPEN</span>
+              </a>
+
+              <!-- INSTAGRAM -->
+
+              <!-- Ganti # dengan URL Instagram Anda -->
+
+              <a
+                href="https://www.instagram.com/adityaperbawa_/"
+                class="contact-card external-contact-link"
+                data-platform="Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Buka Instagram"
+              >
+                <span class="contact-icon">
+                  <i class="bi bi-instagram"></i>
+                </span>
+
+                <span class="contact-name">Instagram</span>
+                <span class="contact-hint">CLICK TO OPEN</span>
+              </a>
+
+              <!-- GITHUB -->
+
+              <!-- Ganti # dengan URL GitHub Anda -->
+
+              <a
+                href="https://github.com/adityaperbawa"
+                class="contact-card external-contact-link"
+                data-platform="GitHub"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Buka GitHub"
+              >
+                <span class="contact-icon">
+                  <i class="bi bi-github"></i>
+                </span>
+
+                <span class="contact-name">GitHub</span>
+                <span class="contact-hint">CLICK TO OPEN</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- /CONTACT SECTION -->
+
+      <!-- ========================================= -->
+      <!-- CONTACT MODAL -->
+      <!-- ========================================= -->
+
+      <dialog
+        id="contactDialog"
+        class="contact-modal"
+        aria-labelledby="contactModalTitle"
+      >
+        <div class="contact-modal-card">
+          <!-- CLOSE BUTTON -->
+
+          <button
+            type="button"
+            class="contact-modal-close"
+            id="closeContactModal"
+            aria-label="Tutup popup"
+          >
+            <i class="bi bi-x-lg"></i>
+          </button>
+
+          <!-- ICON -->
+
+          <div class="contact-modal-icon">
+            <i id="contactModalIcon" class="bi bi-whatsapp"></i>
+          </div>
+
+          <!-- TITLE -->
+
+          <h3 class="contact-modal-title" id="contactModalTitle">WhatsApp</h3>
+
+          <!-- DESCRIPTION -->
+
+          <p class="contact-modal-description" id="contactModalDescription">
+            Anda dapat menghubungi saya melalui nomor WhatsApp berikut.
+          </p>
+
+          <!-- CONTACT VALUE -->
+          <!-- Plain text, bukan link -->
+
+          <div
+            class="contact-value-box"
+            id="contactModalValue"
+            aria-live="polite"
+          >
+            Nomor WhatsApp Anda
+          </div>
+        </div>
+      </dialog>
+
+      <!-- /CONTACT MODAL -->
+
+      <!-- LINK NOTIFICATION -->
+
+      <div
+        id="contactToast"
+        role="status"
+        aria-live="polite"
+        style="
+          position: fixed;
+          bottom: 25px;
+          left: 50%;
+          transform: translateX(-50%) translateY(20px);
+          z-index: 99999;
+          padding: 12px 20px;
+          background: #191919;
+          border: 1px solid rgba(24, 210, 110, 0.4);
+          border-radius: 9px;
+          color: #fff;
+          font-size: 13px;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.3s ease;
+          text-align: center;
+          width: max-content;
+          max-width: calc(100% - 30px);
+        "
+      ></div>
+    </main>
+
+    <!-- SCROLL TOP -->
+
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      aria-label="Scroll to top"
+    >
+      <i class="bi bi-arrow-up-short"></i>
+    </a>
+
+    <!-- PRELOADER -->
+
+    <div id="preloader"></div>
+
+    <!-- VENDOR JS -->
+
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/vendor/aos/aos.js"></script>
+
+    <!-- MAIN JS -->
+
+    <script src="assets/js/main.js"></script>
+
+    <!-- ========================================= -->
+    <!-- CONTACT JAVASCRIPT -->
+    <!-- ========================================= -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // ======================================
+        // CONTACT DATA
+        // Ganti bagian value sesuai kontak Anda
+        // ======================================
+
+        const contactDetails = {
+          whatsapp: {
+            title: "WhatsApp",
+
+            description:
+              "Anda dapat menghubungi saya melalui nomor WhatsApp berikut.",
+
+            value: "+62882002733788",
+
+            icon: "bi bi-whatsapp",
+          },
+
+          gmail: {
+            title: "Gmail",
+
+            description:
+              "Anda dapat menghubungi saya melalui alamat email berikut.",
+
+            value: "adityaperbawa9@gmail.com",
+
+            icon: "bi bi-envelope-fill",
+          },
+        };
+
+        // ======================================
+        // MODAL ELEMENTS
+        // ======================================
+
+        const dialog = document.getElementById("contactDialog");
+
+        const modalTitle = document.getElementById("contactModalTitle");
+
+        const modalDescription = document.getElementById(
+          "contactModalDescription",
+        );
+
+        const modalValue = document.getElementById("contactModalValue");
+
+        const modalIcon = document.getElementById("contactModalIcon");
+
+        const closeButton = document.getElementById("closeContactModal");
+
+        // ======================================
+        // OPEN MODAL
+        // ======================================
+
+        document
+          .querySelectorAll(".js-contact-modal")
+          .forEach(function (button) {
+            button.addEventListener("click", function () {
+              const type = button.dataset.contactType;
+
+              const data = contactDetails[type];
+
+              if (!data) {
+                return;
+              }
+
+              modalTitle.textContent = data.title;
+
+              modalDescription.textContent = data.description;
+
+              modalValue.textContent = data.value;
+
+              modalIcon.className = data.icon;
+
+              // Open overlay without leaving Contact page
+
+              if (!dialog.open) {
+                dialog.showModal();
+              }
+
+              closeButton.focus();
+            });
+          });
+
+        // ======================================
+        // CLOSE MODAL
+        // ======================================
+
+        closeButton.addEventListener("click", function () {
+          dialog.close();
+        });
+
+        // Close when backdrop is clicked
+
+        dialog.addEventListener("click", function (event) {
+          if (event.target === dialog) {
+            dialog.close();
+          }
+        });
+
+        // Escape is handled by native dialog behavior.
+        // Focus returns to the previously activated control.
+
+        // ======================================
+        // EXTERNAL SOCIAL LINKS
+        // ======================================
+
+        document
+          .querySelectorAll(".external-contact-link")
+          .forEach(function (link) {
+            link.addEventListener("click", function (event) {
+              const url = link.getAttribute("href");
+
+              if (!url || url.trim() === "#") {
+                event.preventDefault();
+
+                showToast(
+                  "Tautan " + link.dataset.platform + " belum ditambahkan.",
+                );
+              }
+            });
+          });
+
+        // ======================================
+        // TOAST NOTIFICATION
+        // ======================================
+
+        const toast = document.getElementById("contactToast");
+
+        let toastTimer;
+
+        function showToast(message) {
+          toast.textContent = message;
+
+          toast.style.opacity = "1";
+
+          toast.style.visibility = "visible";
+
+          toast.style.transform = "translateX(-50%) translateY(0)";
+
+          clearTimeout(toastTimer);
+
+          toastTimer = setTimeout(function () {
+            toast.style.opacity = "0";
+
+            toast.style.visibility = "hidden";
+
+            toast.style.transform = "translateX(-50%) translateY(20px)";
+          }, 2800);
+        }
+      });
+    </script>
+  </body>
+</html>

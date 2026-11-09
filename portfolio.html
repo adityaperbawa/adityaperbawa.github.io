@@ -1,0 +1,994 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PORTFOLIO | Selected Works - Aditya Perbawa</title>
+    <meta
+      name="description"
+      content="Portofolio proyek, pengalaman, dan dokumentasi Aditya Perbawa di bidang teknologi informasi."
+    />
+    <meta
+      name="keywords"
+      content="Aditya Perbawa, Portfolio, Web Development, Mobile App, Networking, BNSP"
+    />
+
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link href="assets/css/main.css" rel="stylesheet" />
+
+    <style>
+      :root {
+        --pf-green: #18d26e;
+        --pf-green-light: #91ffc1;
+        --pf-card: #191919;
+        --pf-muted: #a5a5a5;
+      }
+
+      .portfolio.section {
+        padding: 105px 0 75px;
+        min-height: 75vh;
+      }
+
+      .portfolio-intro {
+        max-width: 690px;
+        margin: 0 auto 27px;
+        text-align: center;
+        color: var(--pf-muted);
+        font-size: 13px;
+        line-height: 1.8;
+      }
+
+      /* CATEGORY FILTER */
+
+      .portfolio-filters {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 9px;
+        margin: 0 auto 30px;
+      }
+
+      .portfolio-filter {
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 30px;
+        padding: 8px 17px;
+        background: #191919;
+        color: #aaa;
+        font:
+          600 11px "Poppins",
+          sans-serif;
+        letter-spacing: 0.65px;
+        cursor: pointer;
+        transition: all 0.25s ease;
+      }
+
+      .portfolio-filter:hover {
+        color: var(--pf-green);
+        border-color: var(--pf-green);
+        transform: translateY(-2px);
+      }
+
+      .portfolio-filter.active {
+        background: var(--pf-green);
+        border-color: var(--pf-green);
+        color: #101010;
+        box-shadow: 0 0 16px rgba(24, 210, 110, 0.14);
+      }
+
+      .portfolio-filter:focus-visible,
+      .project-detail-link:focus-visible {
+        outline: 2px solid var(--pf-green-light);
+        outline-offset: 3px;
+      }
+
+      /* PROJECT GRID */
+
+      .portfolio-grid {
+        width: 100%;
+        max-width: 1080px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 17px;
+        align-items: stretch;
+      }
+
+      /* PROJECT CARD */
+
+      .project-card {
+        position: relative;
+        min-width: 0;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.085);
+        border-radius: 12px;
+        background: var(--pf-card);
+        transition:
+          transform 0.3s ease,
+          border-color 0.3s ease,
+          box-shadow 0.3s ease;
+        animation: cardIn 0.38s ease both;
+      }
+
+      .project-card[hidden] {
+        display: none !important;
+      }
+
+      .project-card:before {
+        content: "";
+        position: absolute;
+        z-index: 4;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--pf-green),
+          var(--pf-green-light),
+          var(--pf-green),
+          transparent
+        );
+        pointer-events: none;
+      }
+
+      .project-card:hover:before {
+        animation: greenSweep 1.8s linear infinite;
+      }
+
+      .project-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(24, 210, 110, 0.42);
+        box-shadow:
+          0 11px 26px rgba(0, 0, 0, 0.24),
+          0 0 13px rgba(24, 210, 110, 0.045);
+      }
+
+      @keyframes greenSweep {
+        to {
+          left: 100%;
+        }
+      }
+
+      @keyframes cardIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* PROJECT IMAGE */
+
+      .project-media {
+        position: relative;
+        display: block;
+        width: 100%;
+        aspect-ratio: 16/9;
+        overflow: hidden;
+        background: #0e0e0e;
+        text-decoration: none;
+      }
+
+      .project-media img,
+      .project-media video {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition:
+          transform 0.55s ease,
+          filter 0.35s ease;
+      }
+
+      .project-card:hover .project-media img,
+      .project-card:hover .project-media video {
+        transform: scale(1.045);
+        filter: brightness(0.66);
+      }
+
+      .project-overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        color: #fff;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .project-overlay i {
+        display: grid;
+        place-items: center;
+        width: 39px;
+        height: 39px;
+        border-radius: 50%;
+        background: var(--pf-green);
+        color: #101010;
+        font-size: 18px;
+        transform: scale(0.8);
+        transition: transform 0.3s ease;
+      }
+
+      .project-overlay span {
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 1.3px;
+      }
+
+      .project-card:hover .project-overlay {
+        opacity: 1;
+      }
+
+      .project-card:hover .project-overlay i {
+        transform: scale(1);
+      }
+
+      .media-badge {
+        position: absolute;
+        top: 9px;
+        right: 9px;
+        padding: 5px 9px;
+        border-radius: 20px;
+        background: rgba(0, 0, 0, 0.72);
+        color: #fff;
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 0.6px;
+        z-index: 2;
+      }
+
+      .media-badge i {
+        color: var(--pf-green);
+        margin-right: 4px;
+      }
+
+      /* PROJECT CONTENT */
+
+      .project-content {
+        padding: 14px 15px 15px;
+      }
+
+      .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 8px;
+      }
+
+      .project-tags span {
+        padding: 4px 7px;
+        border: 1px solid rgba(24, 210, 110, 0.2);
+        border-radius: 4px;
+        background: rgba(24, 210, 110, 0.055);
+        color: var(--pf-green);
+        font-size: 8px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+
+      .project-content h3 {
+        margin: 0 0 7px;
+        color: #fff;
+        font:
+          700 15px/1.4 "Raleway",
+          sans-serif;
+      }
+
+      .project-content p {
+        min-height: 56px;
+        margin: 0 0 11px;
+        color: #aaa;
+        font-size: 11px;
+        line-height: 1.65;
+      }
+
+      .project-detail-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        color: var(--pf-green);
+        font-size: 10px;
+        font-weight: 700;
+        text-decoration: none;
+        transition:
+          gap 0.25s ease,
+          color 0.25s ease;
+      }
+
+      .project-detail-link:hover {
+        gap: 12px;
+        color: var(--pf-green-light);
+      }
+
+      .portfolio-empty {
+        display: none;
+        grid-column: 1/-1;
+        padding: 35px 15px;
+        text-align: center;
+        color: #888;
+      }
+
+      .portfolio-empty i {
+        display: block;
+        margin-bottom: 10px;
+        color: var(--pf-green);
+        font-size: 30px;
+      }
+
+      /* RESPONSIVE */
+
+      @media (max-width: 991px) {
+        .portfolio-grid {
+          max-width: 760px;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 15px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .portfolio.section {
+          padding: 85px 0 55px;
+        }
+
+        .portfolio-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 10px;
+        }
+
+        .project-content {
+          padding: 11px;
+        }
+
+        .project-content h3 {
+          font-size: 12px;
+        }
+
+        .project-content p {
+          font-size: 10px;
+          min-height: 66px;
+        }
+
+        .project-tags span {
+          font-size: 7px;
+          padding: 3px 5px;
+        }
+
+        .portfolio-filter {
+          padding: 8px 12px;
+          font-size: 10px;
+        }
+
+        .portfolio-intro {
+          font-size: 12px;
+        }
+
+      }
+
+      @media (max-width: 380px) {
+        .portfolio-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .project-content p {
+          min-height: 0;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .project-card,
+        .project-card:before,
+        .project-media img,
+        .project-media video,
+        .project-overlay {
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="portfolio-page">
+    <!-- HEADER -->
+    <header id="header" class="header d-flex align-items-center fixed-top">
+      <div
+        class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
+      >
+        <a href="index.html" class="logo d-flex align-items-center">
+          <h1 class="sitename">PORTFOLIO</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="portfolio.html" class="active">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <section id="portfolio" class="portfolio section">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>Portfolio</h2>
+            <div>
+              <span>Selected</span>
+              <span class="description-title">Works</span>
+            </div>
+          </div>
+
+          <!-- FILTER -->
+          <div
+            class="portfolio-filters"
+            role="group"
+            aria-label="Filter portfolio"
+          >
+            <button
+              type="button"
+              class="portfolio-filter active"
+              data-filter="all"
+              aria-pressed="true"
+            >
+              ALL
+            </button>
+
+            <button
+              type="button"
+              class="portfolio-filter"
+              data-filter="project"
+              aria-pressed="false"
+            >
+              PROJECT
+            </button>
+
+            <button
+              type="button"
+              class="portfolio-filter"
+              data-filter="experience"
+              aria-pressed="false"
+            >
+              EXPERIENCE
+            </button>
+
+          <!-- PROJECT GRID -->
+          <div class="portfolio-grid" id="portfolioGrid">
+            <!-- PROJECT 1: WEBSITE KANTIN -->
+            <article class="project-card" data-category="project">
+              <a
+                href="portfolio-details.html?project=kantin-qr"
+                class="project-media"
+                aria-label="Detail Website Kantin QR Code"
+              >
+                <img
+                  src="assets/img/portfolio/KULIAH/Project%20Tugas/Kantin%20QR-CODE/Kantin-1.png"
+                  alt="Tampilan proyek Website Kantin QR Code"
+                  loading="lazy"
+                />
+
+                <span class="project-overlay">
+                  <i class="bi bi-arrow-up-right"></i>
+                  <span>VIEW PROJECT</span>
+                </span>
+              </a>
+
+              <div class="project-content">
+                <div class="project-tags">
+                  <span>PROJECT</span>
+                  <span>WEB DEVELOPMENT</span>
+                </div>
+
+                <h3>Website Kantin QR Code</h3>
+
+                <p>
+                  Proyek tugas besar berupa website kantin berbasis QR Code
+                  dengan PHP dan framework Laravel.
+                </p>
+
+                <a
+                  href="portfolio-details.html?project=kantin-qr"
+                  class="project-detail-link"
+                >
+                  Lihat Detail <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- PROJECT 2: MOBILE APP -->
+            <article class="project-card" data-category="project">
+              <a
+                href="portfolio-details.html?project=mobile-app"
+                class="project-media"
+                aria-label="Detail Mobile Application"
+              >
+                <img
+                  src="assets/img/portfolio/KULIAH/Project%20Tugas/Mobile%20App/App.png"
+                  alt="Dokumentasi proyek aplikasi mobile"
+                  loading="lazy"
+                />
+
+                <span class="project-overlay">
+                  <i class="bi bi-arrow-up-right"></i>
+                  <span>VIEW PROJECT</span>
+                </span>
+              </a>
+
+              <div class="project-content">
+                <div class="project-tags">
+                  <span>PROJECT</span>
+                  <span>MOBILE APP</span>
+                </div>
+
+                <h3>Mobile Application</h3>
+
+                <p>
+                  Proyek pengembangan aplikasi mobile menggunakan Flutter dan
+                  bahasa pemrograman Dart.
+                </p>
+
+                <a
+                  href="portfolio-details.html?project=mobile-app"
+                  class="project-detail-link"
+                >
+                  Lihat Detail <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- PROJECT 3: SHOPPE -->
+            <article class="project-card" data-category="project">
+              <a
+                href="portfolio-details.html?project=shoppe"
+                class="project-media"
+                aria-label="Detail Project Shoppe"
+              >
+                <img
+                  src="assets/img/portfolio/KULIAH/Project%20Tugas/Shoppe/Shoppe-1.png"
+                  alt="Dokumentasi antarmuka proyek Shoppe"
+                  loading="lazy"
+                />
+
+                <span class="project-overlay">
+                  <i class="bi bi-arrow-up-right"></i>
+                  <span>VIEW PROJECT</span>
+                </span>
+              </a>
+
+              <div class="project-content">
+                <div class="project-tags">
+                  <span>PROJECT</span>
+                  <span>MOBILE APP</span>
+                </div>
+
+                <h3>Project Shoppe</h3>
+
+                <p>
+                  Dokumentasi tampilan antarmuka proyek Shoppe berdasarkan
+                  gambar hasil pekerjaan yang tersedia.
+                </p>
+
+                <a
+                  href="portfolio-details.html?project=shoppe"
+                  class="project-detail-link"
+                >
+                  Lihat Detail <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- PROJECT 4: FILM -->
+            <article class="project-card" data-category="project">
+              <a
+                href="portfolio-details.html?project=film-tkj"
+                class="project-media"
+                aria-label="Detail Film By TKJ 2"
+              >
+                <video
+                  muted
+                  loop
+                  playsinline
+                  preload="metadata"
+                  aria-label="Preview Film By TKJ 2"
+                >
+                  <source
+                    src="assets/img/portfolio/SMK/FILM/Film%20By%20TKJ%202.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+
+                <span class="media-badge">
+                  <i class="bi bi-play-circle-fill"></i> VIDEO
+                </span>
+
+                <span class="project-overlay">
+                  <i class="bi bi-play-fill"></i>
+                  <span>VIEW PROJECT</span>
+                </span>
+              </a>
+
+              <div class="project-content">
+                <div class="project-tags">
+                  <span>PROJECT</span>
+                  <span>MULTIMEDIA</span>
+                </div>
+
+                <h3>Film By TKJ 2</h3>
+
+                <p>
+                  Karya video dari masa pendidikan Teknik Komputer dan Jaringan
+                  yang ditampilkan sebagai dokumentasi multimedia.
+                </p>
+
+                <a
+                  href="portfolio-details.html?project=film-tkj"
+                  class="project-detail-link"
+                >
+                  Lihat Detail <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- PROJECT 5: BNSP -->
+            <article class="project-card" data-category="project">
+              <a
+                href="portfolio-details.html?project=bnsp"
+                class="project-media"
+                aria-label="Detail dokumen proyek BNSP"
+              >
+                <img
+                  src="assets/img/portfolio/KULIAH/Project%20Tugas/BNSP/BNSP-1.png"
+                  alt="Dokumentasi dokumen SRS aplikasi perpustakaan BNSP"
+                  loading="lazy"
+                />
+
+                <span class="project-overlay">
+                  <i class="bi bi-arrow-up-right"></i>
+                  <span>VIEW PROJECT</span>
+                </span>
+              </a>
+
+              <div class="project-content">
+                <div class="project-tags">
+                  <span>PROJECT</span>
+                  <span>BNSP</span>
+                </div>
+
+                <h3>SRS Aplikasi Perpustakaan</h3>
+
+                <p>
+                  Dokumen Software Requirement Specification untuk aplikasi
+                  perpustakaan berbasis web dengan peran Admin dan Pustakawan.
+                </p>
+
+                <a
+                  href="portfolio-details.html?project=bnsp"
+                  class="project-detail-link"
+                >
+                  Lihat Detail <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- EXPERIENCE 1: KKNM -->
+            <article class="project-card" data-category="experience">
+              <a
+                href="portfolio-details.html?project=kknm"
+                class="project-media"
+                aria-label="Detail pengalaman KKNM"
+              >
+                <img
+                  src="assets/img/portfolio/KULIAH/Experience/KKNM/KKNM-1.jpeg"
+                  alt="Dokumentasi KKNM"
+                  loading="lazy"
+                />
+
+                <span class="project-overlay">
+                  <i class="bi bi-arrow-up-right"></i>
+                  <span>VIEW EXPERIENCE</span>
+                </span>
+              </a>
+
+              <div class="project-content">
+                <div class="project-tags">
+                  <span>EXPERIENCE</span>
+                  <span>KULIAH</span>
+                </div>
+
+                <h3>Pengalaman KKNM</h3>
+
+                <p>
+                  Dokumentasi kegiatan Kuliah Kerja Nyata Mahasiswa selama masa
+                  perkuliahan.
+                </p>
+
+                <a
+                  href="portfolio-details.html?project=kknm"
+                  class="project-detail-link"
+                >
+                  Lihat Detail <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- EXPERIENCE 2: MAGANG KP -->
+            <article class="project-card" data-category="experience">
+              <a
+                href="portfolio-details.html?project=magang-kp"
+                class="project-media"
+                aria-label="Detail Magang Kerja Praktik"
+              >
+                <img
+                  src="assets/img/portfolio/KULIAH/Experience/Magang%20KP/KP-1.PNG"
+                  alt="Dokumentasi Magang Kerja Praktik"
+                  loading="lazy"
+                />
+
+                <span class="project-overlay">
+                  <i class="bi bi-arrow-up-right"></i>
+                  <span>VIEW EXPERIENCE</span>
+                </span>
+              </a>
+
+              <div class="project-content">
+                <div class="project-tags">
+                  <span>EXPERIENCE</span>
+                  <span>INTERNSHIP</span>
+                </div>
+
+                <h3>Magang Kerja Praktik</h3>
+
+                <p>
+                  Dokumentasi pengalaman di bidang Infrastruktur IT dan
+                  pengembangan sistem informasi.
+                </p>
+
+                <a
+                  href="portfolio-details.html?project=magang-kp"
+                  class="project-detail-link"
+                >
+                  Lihat Detail <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- EXPERIENCE 3: ORGANISASI -->
+            <article class="project-card" data-category="experience">
+              <a
+                href="portfolio-details.html?project=organisasi"
+                class="project-media"
+                aria-label="Detail pengalaman organisasi"
+              >
+                <img
+                  src="assets/img/portfolio/KULIAH/Experience/Organisasi/Organisasi-1.jpeg"
+                  alt="Dokumentasi organisasi Himpunan Mahasiswa Teknik Informatika"
+                  loading="lazy"
+                />
+
+                <span class="project-overlay">
+                  <i class="bi bi-arrow-up-right"></i>
+                  <span>VIEW EXPERIENCE</span>
+                </span>
+              </a>
+
+              <div class="project-content">
+                <div class="project-tags">
+                  <span>EXPERIENCE</span>
+                  <span>ORGANIZATION</span>
+                </div>
+
+                <h3>Organisasi HMJIF</h3>
+
+                <p>
+                  Dokumentasi kontribusi dalam Divisi Creative dan kegiatan
+                  SARASEHAN Divisi Lapangan.
+                </p>
+
+                <a
+                  href="portfolio-details.html?project=organisasi"
+                  class="project-detail-link"
+                >
+                  Lihat Detail <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- EXPERIENCE 4: SMK KP -->
+            <article class="project-card" data-category="experience">
+              <a
+                href="portfolio-details.html?project=smk-kp"
+                class="project-media"
+                aria-label="Detail praktik kerja SMK"
+              >
+                <img
+                  src="assets/img/portfolio/SMK/KP/KP-1.jpeg"
+                  alt="Dokumentasi praktik kerja SMK"
+                  loading="lazy"
+                />
+
+                <span class="project-overlay">
+                  <i class="bi bi-arrow-up-right"></i>
+                  <span>VIEW EXPERIENCE</span>
+                </span>
+              </a>
+
+              <div class="project-content">
+                <div class="project-tags">
+                  <span>EXPERIENCE</span>
+                  <span>SMK</span>
+                </div>
+
+                <h3>Praktik Kerja SMK</h3>
+
+                <p>
+                  Dokumentasi praktik dan pembelajaran bidang Teknik Komputer
+                  dan Jaringan di SMK Negeri 13 Bandung.
+                </p>
+
+                <a
+                  href="portfolio-details.html?project=smk-kp"
+                  class="project-detail-link"
+                >
+                  Lihat Detail <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- EXPERIENCE 5: UJIKOM CISCO -->
+            <article class="project-card" data-category="experience">
+              <a
+                href="portfolio-details.html?project=ujikom-cisco"
+                class="project-media"
+                aria-label="Detail Uji Kompetensi Cisco"
+              >
+                <img
+                  src="assets/img/portfolio/SMK/UJIKOM/UJIKOM-1.PNG"
+                  alt="Dokumentasi Uji Kompetensi Cisco"
+                  loading="lazy"
+                />
+
+                <span class="project-overlay">
+                  <i class="bi bi-arrow-up-right"></i>
+                  <span>VIEW EXPERIENCE</span>
+                </span>
+              </a>
+
+              <div class="project-content">
+                <div class="project-tags">
+                  <span>EXPERIENCE</span>
+                  <span>NETWORKING</span>
+                </div>
+
+                <h3>Uji Kompetensi Cisco</h3>
+
+                <p>
+                  Dokumentasi UJIKOM jurusan Teknik Komputer dan Jaringan yang
+                  diselesaikan pada tahun 2022.
+                </p>
+
+                <a
+                  href="portfolio-details.html?project=ujikom-cisco"
+                  class="project-detail-link"
+                >
+                  Lihat Detail <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- EMPTY STATE -->
+            <div class="portfolio-empty" id="portfolioEmpty">
+              <i class="bi bi-folder-x"></i>
+              <p>Belum ada item pada kategori ini.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- SCROLL TOP -->
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      aria-label="Scroll to top"
+    >
+      <i class="bi bi-arrow-up-short"></i>
+    </a>
+
+    <div id="preloader"></div>
+
+    <!-- VENDOR JS -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- PORTFOLIO JAVASCRIPT -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const filterButtons = document.querySelectorAll(".portfolio-filter");
+        const cards = document.querySelectorAll(".project-card");
+        const emptyState = document.getElementById("portfolioEmpty");
+
+        /* CATEGORY FILTER */
+
+        filterButtons.forEach(function (button) {
+          button.addEventListener("click", function () {
+            const selected = button.dataset.filter;
+
+            filterButtons.forEach(function (item) {
+              item.classList.toggle("active", item === button);
+              item.setAttribute(
+                "aria-pressed",
+                item === button ? "true" : "false",
+              );
+            });
+
+            let visible = 0;
+
+            cards.forEach(function (card) {
+              const show =
+                selected === "all" || card.dataset.category === selected;
+
+              card.hidden = !show;
+
+              if (show) {
+                visible++;
+
+                card.style.animation = "none";
+                void card.offsetWidth;
+                card.style.animation = "";
+              }
+            });
+
+            emptyState.style.display = visible ? "none" : "block";
+          });
+        });
+
+        /* VIDEO PREVIEW */
+
+        document
+          .querySelectorAll(".project-card video")
+          .forEach(function (video) {
+            const card = video.closest(".project-card");
+
+            card.addEventListener("mouseenter", function () {
+              video.play().catch(function () {});
+            });
+
+            card.addEventListener("mouseleave", function () {
+              video.pause();
+            });
+          });
+
+      });
+    </script>
+  </body>
+</html>
