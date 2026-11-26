@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>PORTFOLIO | Contact - Aditya Perbawa</title>
+    <title>PORTFOLIO | Kontak - Aditya Perbawa</title>
 
     <meta
       name="description"
@@ -12,7 +12,7 @@
     />
     <meta
       name="keywords"
-      content="Aditya Perbawa, Contact, WhatsApp, Gmail, LinkedIn"
+      content="Aditya Perbawa, Kontak, WhatsApp, Gmail, LinkedIn"
     />
 
     <!-- Favicon -->
@@ -489,6 +489,36 @@
         user-select: text;
       }
 
+      /* PROFILE LINK (only for LinkedIn, Instagram, GitHub) */
+
+      .contact-modal-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 18px;
+        padding: 11px 24px;
+        border: 1px solid var(--contact-green);
+        border-radius: 30px;
+        background: var(--contact-green);
+        color: #101010;
+        font-family: "Poppins", sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.6px;
+        text-decoration: none;
+        transition: all 0.25s ease;
+      }
+
+      .contact-modal-link:hover {
+        background: transparent;
+        color: var(--contact-green);
+      }
+
+      .contact-modal-link[hidden] {
+        display: none;
+      }
+
       .contact-modal-note {
         font-size: 11px;
 
@@ -618,15 +648,15 @@
 
         <nav id="navmenu" class="navmenu">
           <ul>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">Beranda</a></li>
 
-            <li><a href="about.html">About Me</a></li>
+            <li><a href="about.html">Tentang Saya</a></li>
 
             <li><a href="resume.html">Resume</a></li>
 
             <li><a href="portfolio.html">Portfolio</a></li>
 
-            <li><a href="contact.html" class="active">Contact</a></li>
+            <li><a href="contact.html" class="active">Kontak</a></li>
           </ul>
 
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -646,7 +676,7 @@
           <!-- TITLE -->
 
           <div class="section-title">
-            <h2>Contact</h2>
+            <h2>Kontak</h2>
           </div>
 
           <div class="contact-social-wrap">
@@ -689,63 +719,54 @@
 
               <!-- LINKEDIN -->
 
-              <!-- Ganti # dengan URL profil LinkedIn Anda -->
-
-              <a
-                href="https://www.linkedin.com/in/aditya-perbawa/"
-                class="contact-card external-contact-link"
-                data-platform="LinkedIn"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Buka LinkedIn"
+              <button
+                type="button"
+                class="contact-card js-contact-modal"
+                data-contact-type="linkedin"
+                aria-label="Lihat profil LinkedIn"
               >
                 <span class="contact-icon">
                   <i class="bi bi-linkedin"></i>
                 </span>
 
                 <span class="contact-name">LinkedIn</span>
-                <span class="contact-hint">CLICK TO OPEN</span>
-              </a>
+
+                <span class="contact-hint"> CLICK TO VIEW </span>
+              </button>
 
               <!-- INSTAGRAM -->
 
-              <!-- Ganti # dengan URL Instagram Anda -->
-
-              <a
-                href="https://www.instagram.com/adityaperbawa_/"
-                class="contact-card external-contact-link"
-                data-platform="Instagram"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Buka Instagram"
+              <button
+                type="button"
+                class="contact-card js-contact-modal"
+                data-contact-type="instagram"
+                aria-label="Lihat profil Instagram"
               >
                 <span class="contact-icon">
                   <i class="bi bi-instagram"></i>
                 </span>
 
                 <span class="contact-name">Instagram</span>
-                <span class="contact-hint">CLICK TO OPEN</span>
-              </a>
+
+                <span class="contact-hint"> CLICK TO VIEW </span>
+              </button>
 
               <!-- GITHUB -->
 
-              <!-- Ganti # dengan URL GitHub Anda -->
-
-              <a
-                href="https://github.com/adityaperbawa"
-                class="contact-card external-contact-link"
-                data-platform="GitHub"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Buka GitHub"
+              <button
+                type="button"
+                class="contact-card js-contact-modal"
+                data-contact-type="github"
+                aria-label="Lihat profil GitHub"
               >
                 <span class="contact-icon">
                   <i class="bi bi-github"></i>
                 </span>
 
                 <span class="contact-name">GitHub</span>
-                <span class="contact-hint">CLICK TO OPEN</span>
-              </a>
+
+                <span class="contact-hint"> CLICK TO VIEW </span>
+              </button>
             </div>
           </div>
         </div>
@@ -800,6 +821,20 @@
           >
             Nomor WhatsApp Anda
           </div>
+
+          <!-- PROFILE LINK -->
+          <!-- Hanya tampil untuk LinkedIn, Instagram, dan GitHub -->
+
+          <a
+            class="contact-modal-link"
+            id="contactModalLink"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            hidden
+          >
+            Buka Profil
+          </a>
         </div>
       </dialog>
 
@@ -891,6 +926,51 @@
 
             icon: "bi bi-envelope-fill",
           },
+
+          linkedin: {
+            title: "LinkedIn",
+
+            description:
+              "Anda dapat menghubungi saya melalui profil LinkedIn berikut.",
+
+            value: "linkedin.com/in/aditya-perbawa",
+
+            icon: "bi bi-linkedin",
+
+            url: "https://www.linkedin.com/in/aditya-perbawa/",
+
+            linkLabel: "Buka Profil LinkedIn",
+          },
+
+          instagram: {
+            title: "Instagram",
+
+            description:
+              "Anda dapat menghubungi saya melalui profil Instagram berikut.",
+
+            value: "instagram.com/adityaperbawa_",
+
+            icon: "bi bi-instagram",
+
+            url: "https://www.instagram.com/adityaperbawa_/",
+
+            linkLabel: "Kunjungi Instagram",
+          },
+
+          github: {
+            title: "GitHub",
+
+            description:
+              "Anda dapat melihat karya dan proyek saya melalui profil GitHub berikut.",
+
+            value: "github.com/adityaperbawa",
+
+            icon: "bi bi-github",
+
+            url: "https://github.com/adityaperbawa",
+
+            linkLabel: "Kunjungi GitHub",
+          },
         };
 
         // ======================================
@@ -908,6 +988,8 @@
         const modalValue = document.getElementById("contactModalValue");
 
         const modalIcon = document.getElementById("contactModalIcon");
+
+        const modalLink = document.getElementById("contactModalLink");
 
         const closeButton = document.getElementById("closeContactModal");
 
@@ -934,6 +1016,19 @@
               modalValue.textContent = data.value;
 
               modalIcon.className = data.icon;
+
+              // Show the profile link only for LinkedIn, Instagram, and
+              // GitHub; WhatsApp and Gmail have no url, so it stays hidden.
+
+              if (data.url) {
+                modalLink.href = data.url;
+
+                modalLink.textContent = data.linkLabel || "Buka Profil";
+
+                modalLink.hidden = false;
+              } else {
+                modalLink.hidden = true;
+              }
 
               // Open overlay without leaving Contact page
 
@@ -963,26 +1058,6 @@
 
         // Escape is handled by native dialog behavior.
         // Focus returns to the previously activated control.
-
-        // ======================================
-        // EXTERNAL SOCIAL LINKS
-        // ======================================
-
-        document
-          .querySelectorAll(".external-contact-link")
-          .forEach(function (link) {
-            link.addEventListener("click", function (event) {
-              const url = link.getAttribute("href");
-
-              if (!url || url.trim() === "#") {
-                event.preventDefault();
-
-                showToast(
-                  "Tautan " + link.dataset.platform + " belum ditambahkan.",
-                );
-              }
-            });
-          });
 
         // ======================================
         // TOAST NOTIFICATION
