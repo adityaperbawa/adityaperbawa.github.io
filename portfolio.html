@@ -911,6 +911,39 @@
           </div>
         </div>
       </section>
+
+      <!-- GITHUB SAYA -->
+      <section id="github" class="portfolio section" style="padding-top: 20px;">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>GitHub Saya</h2>
+            <div>
+              <span>Repositori</span>
+              <span class="description-title">Publik</span>
+            </div>
+          </div>
+          <p class="portfolio-intro">
+            Daftar repositori publik di
+            <a href="https://github.com/adityaperbawa" target="_blank" rel="noopener" style="color: #18d26e;">github.com/adityaperbawa</a>,
+            ditampilkan langsung lewat GitHub API. Kalau API tidak terjangkau,
+            daftar tersimpan di bawah ini yang ditampilkan.
+          </p>
+          <p style="text-align: center; margin-bottom: 18px;">
+            <input
+              type="search"
+              id="githubRepoSearch"
+              placeholder="Cari repositori…"
+              aria-label="Cari repositori"
+              style="max-width: 360px; width: 100%; padding: 10px 14px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.15); background: #191919; color: #fff;"
+            />
+          </p>
+          <p id="githubRepoStatus" style="text-align: center; color: #a5a5a5; font-size: 12px;">Memuat repositori dari GitHub…</p>
+          <div class="portfolio-grid" id="githubRepoGrid"></div>
+          <p style="text-align: center; margin-top: 22px;">
+            <a href="https://github.com/adityaperbawa" target="_blank" rel="noopener" class="project-detail-link">Semua Repositori di GitHub <i class="bi bi-arrow-right"></i></a>
+          </p>
+        </div>
+      </section>
     </main>
 
     <!-- SCROLL TOP -->
@@ -989,6 +1022,58 @@
           });
 
       });
+    </script>
+
+    <!-- GITHUB REPOS: LIVE VIA API, FALLBACK STATIS -->
+    <script>
+      (function () {
+        var fallbackRepos = [
+          { name: "adityaperbawa", description: "My Github Profile", language: "", html_url: "https://github.com/adityaperbawa/adityaperbawa" },
+          { name: "sistem-perpustakaan", description: "Sistem Perpustakaan BNSP", language: "PHP", html_url: "https://github.com/adityaperbawa/sistem-perpustakaan" },
+          { name: "Kantin", description: "Sistem Kantin Berbasis QR-Code", language: "PHP", html_url: "https://github.com/adityaperbawa/Kantin" },
+          { name: "E-Luna", description: "Sistem Manajemen Inventori Gudang BPBD", language: "Blade", html_url: "https://github.com/adityaperbawa/E-Luna" },
+          { name: "adityaperbawa.github.io", description: "Website Portfolio", language: "HTML", html_url: "https://github.com/adityaperbawa/adityaperbawa.github.io" },
+          { name: "UAS-PBO", description: "", language: "", html_url: "https://github.com/adityaperbawa/UAS-PBO" },
+          { name: "uaspbo_048", description: "", language: "", html_url: "https://github.com/adityaperbawa/uaspbo_048" },
+          { name: "TugasPBO", description: "", language: "", html_url: "https://github.com/adityaperbawa/TugasPBO" }
+        ];
+        var grid = document.getElementById("githubRepoGrid");
+        var statusEl = document.getElementById("githubRepoStatus");
+        var searchEl = document.getElementById("githubRepoSearch");
+        if (!grid) return;
+        function escapeHtml(s) {
+          return String(s || "").replace(/[&<>"']/g, function (c) {
+            return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+          });
+        }
+        function render(repos, note) {
+          if (statusEl) statusEl.textContent = note;
+          grid.innerHTML = repos.map(function (repo) {
+            return '<article class="project-card" data-repo-name="' + escapeHtml(repo.name.toLowerCase()) + '">' +
+              '<div class="project-content"><div class="project-tags"><span>GITHUB</span>' +
+              (repo.language ? '<span>' + escapeHtml(repo.language) + '</span>' : '') +
+              '</div><h3>' + escapeHtml(repo.name) + '</h3><p>' +
+              escapeHtml(repo.description || "Repositori publik di GitHub.") +
+              '</p><a class="project-detail-link" href="' + escapeHtml(repo.html_url) + '" target="_blank" rel="noopener">Buka di GitHub <i class="bi bi-arrow-right"></i></a></div></article>';
+          }).join("");
+        }
+        function applySearch() {
+          var q = (searchEl ? searchEl.value : "").toLowerCase();
+          document.querySelectorAll("#githubRepoGrid .project-card").forEach(function (card) {
+            card.hidden = q && card.getAttribute("data-repo-name").indexOf(q) === -1;
+          });
+        }
+        if (searchEl) searchEl.addEventListener("input", applySearch);
+        fetch("https://api.github.com/users/adityaperbawa/repos?sort=updated&per_page=100")
+          .then(function (res) { if (!res.ok) throw new Error("GitHub API tidak terjangkau"); return res.json(); })
+          .then(function (data) {
+            if (!Array.isArray(data) || !data.length) throw new Error("Tidak ada repo");
+            render(data, "Menampilkan " + data.length + " repositori publik dari GitHub API.");
+          })
+          .catch(function () {
+            render(fallbackRepos, "API tidak terjangkau — menampilkan daftar tersimpan (8 repo).");
+          });
+      })();
     </script>
   </body>
 </html>
