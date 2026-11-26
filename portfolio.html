@@ -270,8 +270,11 @@
       /* CERTIFICATE CARD — photo only, no detail page */
 
       .certificate-card .certificate-media {
+        position: relative;
         display: block;
         width: 100%;
+        aspect-ratio: 3 / 4;
+        overflow: hidden;
         padding: 0;
         border: 0;
         background: #0e0e0e;
@@ -282,7 +285,30 @@
       .certificate-card .certificate-media img {
         display: block;
         width: 100%;
-        height: auto;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+        transition:
+          transform 0.55s ease,
+          filter 0.35s ease;
+      }
+
+      .certificate-card:hover .certificate-media img {
+        transform: scale(1.045);
+        filter: brightness(0.66);
+      }
+
+      .certificate-card:focus-within .project-overlay {
+        opacity: 1;
+      }
+
+      .certificate-card:focus-within .project-overlay i {
+        transform: scale(1);
+      }
+
+      .certificate-card .certificate-media:focus-visible {
+        outline: 2px solid var(--pf-green-light);
+        outline-offset: 3px;
       }
 
       /* CERTIFICATE LIGHTBOX — overlay on top of the page */
@@ -1007,6 +1033,10 @@
                   alt="Sertifikat Kunjungan Industri PT Skyshi Digital Indonesia, 23-26 Oktober 2023"
                   loading="lazy"
                 >
+                <span class="project-overlay">
+                  <i class="bi bi-zoom-in"></i>
+                  <span>LIHAT SERTIFIKAT</span>
+                </span>
               </button>
             </article>
 
@@ -1023,6 +1053,10 @@
                   alt="Sertifikat Seminar dan Workshop Artificial Intelligence & Optimization with Python, 28 Februari 2023"
                   loading="lazy"
                 >
+                <span class="project-overlay">
+                  <i class="bi bi-zoom-in"></i>
+                  <span>LIHAT SERTIFIKAT</span>
+                </span>
               </button>
             </article>
 
@@ -1039,6 +1073,10 @@
                   alt="Sertifikat Sarasehan LEAD AND DEVELOP, Periode 2022/2023"
                   loading="lazy"
                 >
+                <span class="project-overlay">
+                  <i class="bi bi-zoom-in"></i>
+                  <span>LIHAT SERTIFIKAT</span>
+                </span>
               </button>
             </article>
 
@@ -1055,6 +1093,10 @@
                   alt="Sertifikat Seminar Artificial Intelligence dalam Teknologi Pendidikan, 30 Juni 2025"
                   loading="lazy"
                 >
+                <span class="project-overlay">
+                  <i class="bi bi-zoom-in"></i>
+                  <span>LIHAT SERTIFIKAT</span>
+                </span>
               </button>
             </article>
 
@@ -1071,6 +1113,10 @@
                   alt="Sertifikat Kuliah Kerja Nyata Mahasiswa, 1-31 Agustus 2025, nilai A"
                   loading="lazy"
                 >
+                <span class="project-overlay">
+                  <i class="bi bi-zoom-in"></i>
+                  <span>LIHAT SERTIFIKAT</span>
+                </span>
               </button>
             </article>
 
@@ -1087,6 +1133,10 @@
                   alt="Sertifikat Masa Pengenalan Lingkungan Kampus, 14-15 September 2022, dinyatakan LULUS"
                   loading="lazy"
                 >
+                <span class="project-overlay">
+                  <i class="bi bi-zoom-in"></i>
+                  <span>LIHAT SERTIFIKAT</span>
+                </span>
               </button>
             </article>
 
@@ -1103,6 +1153,10 @@
                   alt="English Proficiency Certificate, 12 September 2026"
                   loading="lazy"
                 >
+                <span class="project-overlay">
+                  <i class="bi bi-zoom-in"></i>
+                  <span>LIHAT SERTIFIKAT</span>
+                </span>
               </button>
             </article>
 
@@ -1119,6 +1173,10 @@
                   alt="Sertifikat Kompetensi BNSP Pengembangan Perangkat Lunak, Pemrogram Muda, 31 Agustus 2026, depan dan belakang"
                   loading="lazy"
                 >
+                <span class="project-overlay">
+                  <i class="bi bi-zoom-in"></i>
+                  <span>LIHAT SERTIFIKAT</span>
+                </span>
               </button>
             </article>
 
@@ -1135,6 +1193,10 @@
                   alt="Sertifikat Praktik Kerja Lapangan di PLOPD Bapenda Jawa Barat, 1 November 2021-28 Februari 2022, hasil BAIK"
                   loading="lazy"
                 >
+                <span class="project-overlay">
+                  <i class="bi bi-zoom-in"></i>
+                  <span>LIHAT SERTIFIKAT</span>
+                </span>
               </button>
             </article>
 
@@ -1151,6 +1213,10 @@
                   alt="Sertifikat Apresiasi Audiens Seminar Engineering Day, 4 Januari 2024"
                   loading="lazy"
                 >
+                <span class="project-overlay">
+                  <i class="bi bi-zoom-in"></i>
+                  <span>LIHAT SERTIFIKAT</span>
+                </span>
               </button>
             </article>
 
@@ -1167,6 +1233,10 @@
                   alt="Sertifikat Seminar Bandung Coders, 4 Maret 2022"
                   loading="lazy"
                 >
+                <span class="project-overlay">
+                  <i class="bi bi-zoom-in"></i>
+                  <span>LIHAT SERTIFIKAT</span>
+                </span>
               </button>
             </article>
 
@@ -1183,6 +1253,10 @@
                   alt="Certificate of Achievement TOEFL Prediction Test, 23 Mei 2026"
                   loading="lazy"
                 >
+                <span class="project-overlay">
+                  <i class="bi bi-zoom-in"></i>
+                  <span>LIHAT SERTIFIKAT</span>
+                </span>
               </button>
             </article>
 
@@ -1199,6 +1273,10 @@
                   alt="Sertifikat Dicoding Belajar Dasar Pemrograman Web, 16 November 2023"
                   loading="lazy"
                 >
+                <span class="project-overlay">
+                  <i class="bi bi-zoom-in"></i>
+                  <span>LIHAT SERTIFIKAT</span>
+                </span>
               </button>
             </article>
 
@@ -1215,6 +1293,10 @@
                   alt="Sertifikat Dicoding Belajar Membuat Front-End Web untuk Pemula, 29 November 2023"
                   loading="lazy"
                 >
+                <span class="project-overlay">
+                  <i class="bi bi-zoom-in"></i>
+                  <span>LIHAT SERTIFIKAT</span>
+                </span>
               </button>
             </article>
 
