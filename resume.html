@@ -61,6 +61,17 @@
         padding-bottom: 75px;
       }
 
+      /* TWO-COLUMN LAYOUT: columns align at the top, section groups
+         are separated clearly so the page reads in a clear order. */
+
+      .resume .row {
+        align-items: flex-start;
+      }
+
+      .resume .col-lg-6 > .resume-title:not(:first-child) {
+        margin-top: 34px;
+      }
+
       /* SECTION TITLES */
 
       .resume .resume-title {
@@ -522,50 +533,7 @@
             <!-- LEFT COLUMN -->
             <!-- ================================= -->
 
-            <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
-              <!--  SUMMARY -->
-
-              <h3 class="resume-title">Summary</h3>
-
-              <article class="resume-entry">
-                <button
-                  type="button"
-                  class="resume-toggle"
-                  aria-expanded="false"
-                  aria-controls="resume-summary"
-                >
-                  <span class="resume-toggle-main">
-                    <span class="resume-entry-title"> Aditya Perbawa </span>
-
-                    <span class="resume-entry-meta"> Profile </span>
-                  </span>
-
-                  <span class="resume-toggle-icon">
-                    <i class="bi bi-chevron-down"></i>
-                  </span>
-                </button>
-
-                <div
-                  class="resume-panel"
-                  id="resume-summary"
-                  aria-hidden="true"
-                >
-                  <div class="resume-panel-inner">
-                    <span class="resume-tag">Profile</span>
-
-                    <p>
-                      Lulusan S1 Teknik Informatika dengan pengalaman praktik di
-                      bidang pengembangan aplikasi, web development,
-                      administrasi jaringan, dan infrastruktur IT. Memiliki
-                      kemampuan dalam pemrograman, pengelolaan database, serta
-                      troubleshooting komputer. Memiliki semangat belajar
-                      tinggi, adaptif, dan berorientasi pada pemecahan masalah
-                      melalui pemanfaatan teknologi.
-                    </p>
-                  </div>
-                </div>
-              </article>
-
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
               <!-- EDUCATION -->
 
               <h3 class="resume-title">Education</h3>
@@ -607,10 +575,11 @@
                     </p>
 
                     <p>
-                      Menyelesaikan pendidikan sarjana di bidang Teknik
-                      Informatika dengan fokus pada pengembangan perangkat
-                      lunak, pemrograman, pengembangan aplikasi, pengelolaan
-                      database, dan pemanfaatan teknologi informasi.
+                      Lulus S1 Teknik Informatika dengan IPK 3,32/4,00 dan
+                      sertifikasi BNSP Pemrograman Muda. Membangun proyek
+                      aplikasi website, desktop, dan mobile dengan PHP,
+                      Laravel, dan MySQL, serta mengerjakan proyek Data
+                      Analyst: pengolahan, analisis, dan visualisasi data.
                     </p>
 
                     <p><strong>Periode:</strong> 2022 - 2026</p>
@@ -653,10 +622,10 @@
                     </p>
 
                     <p>
-                      Menyelesaikan pendidikan kejuruan dengan mempelajari dasar
-                      jaringan komputer, perangkat keras, sistem operasi,
-                      konfigurasi jaringan, serta praktik troubleshooting dan
-                      pemeliharaan komputer.
+                      Mempelajari dan mempraktikkan konfigurasi jaringan
+                      komputer, instalasi perangkat keras dan sistem operasi,
+                      serta troubleshooting dan pemeliharaan komputer.
+                      Menyelesaikan Uji Kompetensi (UJIKOM) CISCO pada 2022.
                     </p>
 
                     <p><strong>Periode:</strong> 2019 - 2022</p>
@@ -708,18 +677,18 @@
 
                     <ul>
                       <li>
-                        Berkontribusi dalam menciptakan konten visual untuk
-                        berbagai kegiatan organisasi.
+                        Memproduksi desain grafis dan mengedit video untuk
+                        konten visual kegiatan organisasi.
                       </li>
 
                       <li>
-                        Mengembangkan konsep dan kampanye kreatif untuk
-                        mendukung kegiatan organisasi.
+                        Mengelola media sosial himpunan dan merancang kampanye
+                        kreatif untuk berbagai kegiatan.
                       </li>
 
                       <li>
-                        Menggabungkan kreativitas desain dengan pemahaman
-                        teknologi untuk mendukung program-program kemahasiswaan.
+                        Mendukung publikasi program kemahasiswaan dengan
+                        menggabungkan desain dan teknologi.
                       </li>
                     </ul>
                   </div>
@@ -766,18 +735,18 @@
 
                     <ul>
                       <li>
-                        Melakukan persiapan dan instalasi tenda serta koordinasi
-                        pembagian area kegiatan.
+                        Menyiapkan dan memasang tenda serta membagi area
+                        kegiatan, berkoordinasi dengan divisi lain.
                       </li>
 
                       <li>
-                        Memantau keamanan lokasi dan melakukan troubleshooting
-                        permasalahan di lapangan.
+                        Memantau keamanan lokasi dan menyelesaikan
+                        permasalahan teknis di lapangan.
                       </li>
 
                       <li>
-                        Mengelola logistik peralatan dan melakukan koordinasi
-                        dengan divisi lainnya.
+                        Mengelola logistik peralatan selama kegiatan
+                        berlangsung.
                       </li>
                     </ul>
                   </div>
@@ -789,7 +758,7 @@
             <!-- RIGHT COLUMN -->
             <!-- ================================= -->
 
-            <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
               <!--  EXPERIENCE -->
 
               <h3 class="resume-title">Experience</h3>
@@ -811,7 +780,7 @@
 
                     <span class="resume-entry-meta">
                       Praktik Kerja Lapangan · Pengelolaan Sistem Informasi
-                      Digital
+                      Digital · Nov 2021 - Feb 2022
                     </span>
                   </span>
 
@@ -831,24 +800,25 @@
                       Digital
                     </p>
 
+                    <p><strong>Periode:</strong> November 2021 - Februari 2022</p>
+
                     <ul>
                       <li>
                         <strong>Network Administration:</strong>
-                        Melakukan konfigurasi dan administrasi jaringan
-                        menggunakan perangkat router Cisco dan MikroTik.
+                        Mengonfigurasi dan mengadministrasikan jaringan kantor
+                        dengan router Cisco dan MikroTik.
                       </li>
 
                       <li>
                         <strong>Documentation Management:</strong>
-                        Menyusun notulen rapat dan dokumentasi Standard
-                        Operating Procedure (SOP) sistem menggunakan Microsoft
-                        Word.
+                        Menyusun notulen rapat dan mendokumentasikan Standard
+                        Operating Procedure (SOP) sistem di Microsoft Word.
                       </li>
 
                       <li>
                         <strong>Inventory &amp; Asset Management:</strong>
-                        Melakukan pencatatan dan pengelolaan inventaris serta
-                        alat tulis kantor (ATK) menggunakan Microsoft Excel.
+                        Mencatat dan mengelola inventaris perangkat, data
+                        barang, dan alat tulis kantor (ATK) di Microsoft Excel.
                       </li>
                     </ul>
                   </div>
@@ -870,7 +840,8 @@
                     </span>
 
                     <span class="resume-entry-meta">
-                      Magang Kerja Praktik · Bagian Infrastruktur IT
+                      Magang Kerja Praktik · Bagian Infrastruktur IT · Mei -
+                      Okt 2025
                     </span>
                   </span>
 
@@ -887,25 +858,22 @@
 
                     <p><strong>Bagian:</strong> Infrastruktur IT</p>
 
+                    <p><strong>Periode:</strong> Mei 2025 - Oktober 2025</p>
+
                     <ul>
                       <li>
-                        Melakukan pengembangan kembali (redevelopment) aplikasi
-                        logistik berbasis web untuk pengelolaan surat dan barang
-                        masuk maupun keluar.
+                        Me-redevelop aplikasi logistik berbasis web untuk
+                        mencatat arus surat dan barang masuk maupun keluar.
                       </li>
 
                       <li>
-                        Mengembangkan dan mengelola database MySQL serta backend
-                        menggunakan Laravel dan PHP.
+                        Membangun backend dengan Laravel dan PHP serta
+                        database MySQL, dengan tampilan frontend yang
+                        responsif dan mudah digunakan.
                       </li>
 
                       <li>
-                        Membangun tampilan frontend aplikasi yang responsif dan
-                        mudah digunakan.
-                      </li>
-
-                      <li>
-                        Mengelola source code dan proses pengembangan aplikasi
+                        Mengelola source code secara terstruktur dan efisien
                         menggunakan Git dan GitHub.
                       </li>
                     </ul>
@@ -950,8 +918,8 @@
                     <span class="resume-tag">Web Development</span>
 
                     <p>
-                      <strong>Proyek:</strong>
-                      Pengembangan Website Kantin Berbasis QR Code.
+                      <strong>Proyek:</strong> Pengembangan Website Kantin
+                      Berbasis QR Code.
                     </p>
 
                     <p><strong>Instansi:</strong> Universitas Langlangbuana</p>
@@ -1005,6 +973,49 @@
                       <li>
                         Mengembangkan aplikasi mobile menggunakan framework
                         Flutter dan bahasa pemrograman Dart.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </article>
+
+              <!-- SHOPEE E-COMMERCE PROJECT -->
+
+              <article class="resume-entry">
+                <button
+                  type="button"
+                  class="resume-toggle"
+                  aria-expanded="false"
+                  aria-controls="resume-shopee"
+                >
+                  <span class="resume-toggle-main">
+                    <span class="resume-entry-title">
+                      Pembuatan Website Shopee E-Commerce
+                    </span>
+
+                    <span class="resume-entry-meta">
+                      Proyek Akademik · E-Commerce
+                    </span>
+                  </span>
+
+                  <span class="resume-toggle-icon">
+                    <i class="bi bi-chevron-down"></i>
+                  </span>
+                </button>
+
+                <div class="resume-panel" id="resume-shopee" aria-hidden="true">
+                  <div class="resume-panel-inner">
+                    <span class="resume-tag">E-Commerce</span>
+
+                    <p>
+                      <strong>Proyek:</strong> Pembuatan Website Shopee
+                      E-Commerce.
+                    </p>
+
+                    <ul>
+                      <li>
+                        Membangun website e-commerce dengan konsep seperti
+                        Shopee.
                       </li>
                     </ul>
                   </div>
