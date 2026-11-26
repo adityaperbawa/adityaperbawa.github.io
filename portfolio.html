@@ -267,6 +267,98 @@
         margin-right: 4px;
       }
 
+      /* CERTIFICATE CARD — photo only, no detail page */
+
+      .certificate-card .certificate-media {
+        display: block;
+        width: 100%;
+        padding: 0;
+        border: 0;
+        background: #0e0e0e;
+        cursor: zoom-in;
+        font: inherit;
+      }
+
+      .certificate-card .certificate-media img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      /* CERTIFICATE LIGHTBOX — overlay on top of the page */
+
+      .cert-lightbox {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.88);
+      }
+
+      .cert-lightbox[hidden] {
+        display: none;
+      }
+
+      .cert-lightbox-stage {
+        width: min(720px, 94vw);
+        max-height: 78vh;
+        overflow: auto;
+        border-radius: 10px;
+        background: #111;
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
+      }
+
+      .cert-lightbox-stage img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .cert-lightbox-toolbar {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .cert-lightbox-toolbar button {
+        display: grid;
+        place-items: center;
+        width: 38px;
+        height: 38px;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .cert-lightbox-toolbar button:hover {
+        background: var(--pf-green);
+        border-color: var(--pf-green);
+        color: #101010;
+      }
+
+      .cert-lightbox-toolbar span {
+        min-width: 52px;
+        text-align: center;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .cert-lightbox-hint {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 12px;
+        text-align: center;
+      }
+
       /* PROJECT CONTENT */
 
       .project-content {
@@ -902,6 +994,230 @@
               </div>
             </article>
 
+            <!-- CERTIFICATE 1: SERTIFIKAT KUNJUNGAN INDUSTRI -->
+            <article class="project-card certificate-card" data-category="certificate">
+              <button
+                type="button"
+                class="certificate-media"
+                data-full="assets/img/portfolio/01-kunjungan-industri.jpg"
+                aria-label="Perbesar Sertifikat Kunjungan Industri"
+              >
+                <img
+                  src="assets/img/portfolio/01-kunjungan-industri.jpg"
+                  alt="Sertifikat Kunjungan Industri PT Skyshi Digital Indonesia, 23-26 Oktober 2023"
+                  loading="lazy"
+                >
+              </button>
+            </article>
+
+            <!-- CERTIFICATE 2: SEMINAR AI & OPTIMIZATION WITH PYTHON -->
+            <article class="project-card certificate-card" data-category="certificate">
+              <button
+                type="button"
+                class="certificate-media"
+                data-full="assets/img/portfolio/02-seminar-ai-python.jpg"
+                aria-label="Perbesar Seminar AI & Optimization with Python"
+              >
+                <img
+                  src="assets/img/portfolio/02-seminar-ai-python.jpg"
+                  alt="Sertifikat Seminar dan Workshop Artificial Intelligence & Optimization with Python, 28 Februari 2023"
+                  loading="lazy"
+                >
+              </button>
+            </article>
+
+            <!-- CERTIFICATE 3: SARASEHAN LEAD AND DEVELOP -->
+            <article class="project-card certificate-card" data-category="certificate">
+              <button
+                type="button"
+                class="certificate-media"
+                data-full="assets/img/portfolio/03-sarasehan.jpg"
+                aria-label="Perbesar Sarasehan LEAD AND DEVELOP"
+              >
+                <img
+                  src="assets/img/portfolio/03-sarasehan.jpg"
+                  alt="Sertifikat Sarasehan LEAD AND DEVELOP, Periode 2022/2023"
+                  loading="lazy"
+                >
+              </button>
+            </article>
+
+            <!-- CERTIFICATE 4: SEMINAR AI DALAM TEKNOLOGI PENDIDIKAN -->
+            <article class="project-card certificate-card" data-category="certificate">
+              <button
+                type="button"
+                class="certificate-media"
+                data-full="assets/img/portfolio/04-seminar-ai-pendidikan.jpg"
+                aria-label="Perbesar Seminar AI dalam Teknologi Pendidikan"
+              >
+                <img
+                  src="assets/img/portfolio/04-seminar-ai-pendidikan.jpg"
+                  alt="Sertifikat Seminar Artificial Intelligence dalam Teknologi Pendidikan, 30 Juni 2025"
+                  loading="lazy"
+                >
+              </button>
+            </article>
+
+            <!-- CERTIFICATE 5: SERTIFIKAT KKNM -->
+            <article class="project-card certificate-card" data-category="certificate">
+              <button
+                type="button"
+                class="certificate-media"
+                data-full="assets/img/portfolio/05-kknm.jpg"
+                aria-label="Perbesar Sertifikat KKNM"
+              >
+                <img
+                  src="assets/img/portfolio/05-kknm.jpg"
+                  alt="Sertifikat Kuliah Kerja Nyata Mahasiswa, 1-31 Agustus 2025, nilai A"
+                  loading="lazy"
+                >
+              </button>
+            </article>
+
+            <!-- CERTIFICATE 6: SERTIFIKAT MAPELING -->
+            <article class="project-card certificate-card" data-category="certificate">
+              <button
+                type="button"
+                class="certificate-media"
+                data-full="assets/img/portfolio/06-mapeling.jpg"
+                aria-label="Perbesar Sertifikat Mapeling"
+              >
+                <img
+                  src="assets/img/portfolio/06-mapeling.jpg"
+                  alt="Sertifikat Masa Pengenalan Lingkungan Kampus, 14-15 September 2022, dinyatakan LULUS"
+                  loading="lazy"
+                >
+              </button>
+            </article>
+
+            <!-- CERTIFICATE 7: ENGLISH PROFICIENCY TEST -->
+            <article class="project-card certificate-card" data-category="certificate">
+              <button
+                type="button"
+                class="certificate-media"
+                data-full="assets/img/portfolio/07-ept.jpg"
+                aria-label="Perbesar English Proficiency Test"
+              >
+                <img
+                  src="assets/img/portfolio/07-ept.jpg"
+                  alt="English Proficiency Certificate, 12 September 2026"
+                  loading="lazy"
+                >
+              </button>
+            </article>
+
+            <!-- CERTIFICATE 8: SERTIFIKAT KOMPETENSI BNSP PEMROGRAM MUDA -->
+            <article class="project-card certificate-card" data-category="certificate">
+              <button
+                type="button"
+                class="certificate-media"
+                data-full="assets/img/portfolio/08-bnsp.jpg"
+                aria-label="Perbesar Sertifikat Kompetensi BNSP Pemrogram Muda"
+              >
+                <img
+                  src="assets/img/portfolio/08-bnsp.jpg"
+                  alt="Sertifikat Kompetensi BNSP Pengembangan Perangkat Lunak, Pemrogram Muda, 31 Agustus 2026, depan dan belakang"
+                  loading="lazy"
+                >
+              </button>
+            </article>
+
+            <!-- CERTIFICATE 9: SERTIFIKAT PKL -->
+            <article class="project-card certificate-card" data-category="certificate">
+              <button
+                type="button"
+                class="certificate-media"
+                data-full="assets/img/portfolio/09-pkl.jpg"
+                aria-label="Perbesar Sertifikat PKL"
+              >
+                <img
+                  src="assets/img/portfolio/09-pkl.jpg"
+                  alt="Sertifikat Praktik Kerja Lapangan di PLOPD Bapenda Jawa Barat, 1 November 2021-28 Februari 2022, hasil BAIK"
+                  loading="lazy"
+                >
+              </button>
+            </article>
+
+            <!-- CERTIFICATE 10: SERTIFIKAT APRESIASI ENGINEERING DAY -->
+            <article class="project-card certificate-card" data-category="certificate">
+              <button
+                type="button"
+                class="certificate-media"
+                data-full="assets/img/portfolio/10-engineering-day.jpg"
+                aria-label="Perbesar Sertifikat Apresiasi Engineering Day"
+              >
+                <img
+                  src="assets/img/portfolio/10-engineering-day.jpg"
+                  alt="Sertifikat Apresiasi Audiens Seminar Engineering Day, 4 Januari 2024"
+                  loading="lazy"
+                >
+              </button>
+            </article>
+
+            <!-- CERTIFICATE 11: SEMINAR BANDUNG CODERS -->
+            <article class="project-card certificate-card" data-category="certificate">
+              <button
+                type="button"
+                class="certificate-media"
+                data-full="assets/img/portfolio/11-bandung-coders.jpg"
+                aria-label="Perbesar Seminar Bandung Coders"
+              >
+                <img
+                  src="assets/img/portfolio/11-bandung-coders.jpg"
+                  alt="Sertifikat Seminar Bandung Coders, 4 Maret 2022"
+                  loading="lazy"
+                >
+              </button>
+            </article>
+
+            <!-- CERTIFICATE 12: TOEFL PREDICTION TEST -->
+            <article class="project-card certificate-card" data-category="certificate">
+              <button
+                type="button"
+                class="certificate-media"
+                data-full="assets/img/portfolio/12-toefl.jpg"
+                aria-label="Perbesar TOEFL Prediction Test"
+              >
+                <img
+                  src="assets/img/portfolio/12-toefl.jpg"
+                  alt="Certificate of Achievement TOEFL Prediction Test, 23 Mei 2026"
+                  loading="lazy"
+                >
+              </button>
+            </article>
+
+            <!-- CERTIFICATE 13: DICODING BELAJAR DASAR PEMROGRAMAN WEB -->
+            <article class="project-card certificate-card" data-category="certificate">
+              <button
+                type="button"
+                class="certificate-media"
+                data-full="assets/img/portfolio/13-dicoding-web.jpg"
+                aria-label="Perbesar Dicoding Belajar Dasar Pemrograman Web"
+              >
+                <img
+                  src="assets/img/portfolio/13-dicoding-web.jpg"
+                  alt="Sertifikat Dicoding Belajar Dasar Pemrograman Web, 16 November 2023"
+                  loading="lazy"
+                >
+              </button>
+            </article>
+
+            <!-- CERTIFICATE 14: DICODING BELAJAR MEMBUAT FRONT-END WEB UNTUK PEMULA -->
+            <article class="project-card certificate-card" data-category="certificate">
+              <button
+                type="button"
+                class="certificate-media"
+                data-full="assets/img/portfolio/14-dicoding-frontend.jpg"
+                aria-label="Perbesar Dicoding Belajar Membuat Front-End Web untuk Pemula"
+              >
+                <img
+                  src="assets/img/portfolio/14-dicoding-frontend.jpg"
+                  alt="Sertifikat Dicoding Belajar Membuat Front-End Web untuk Pemula, 29 November 2023"
+                  loading="lazy"
+                >
+              </button>
+            </article>
+
             <!-- EMPTY STATE -->
             <div class="portfolio-empty" id="portfolioEmpty">
               <i class="bi bi-folder-x"></i>
@@ -923,6 +1239,41 @@
     </a>
 
     <div id="preloader"></div>
+
+    <!-- CERTIFICATE LIGHTBOX -->
+    <div
+      class="cert-lightbox"
+      id="certLightbox"
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-label="Perbesar sertifikat"
+    >
+      <div class="cert-lightbox-toolbar">
+        <button type="button" id="certZoomOut" aria-label="Perkecil">
+          <i class="bi bi-dash-lg"></i>
+        </button>
+        <span id="certZoomLabel">100%</span>
+        <button type="button" id="certZoomIn" aria-label="Perbesar">
+          <i class="bi bi-plus-lg"></i>
+        </button>
+        <button type="button" id="certZoomReset" aria-label="Reset zoom">
+          <i class="bi bi-arrows-fullscreen"></i>
+        </button>
+        <button type="button" id="certClose" aria-label="Tutup">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+
+      <div class="cert-lightbox-stage" id="certLightboxStage">
+        <img id="certLightboxImg" src="" alt="">
+      </div>
+
+      <p class="cert-lightbox-hint">
+        Scroll atau tombol + / &minus; untuk zoom, klik X atau tekan Esc untuk
+        kembali ke halaman sertifikat
+      </p>
+    </div>
 
     <!-- VENDOR JS -->
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -987,6 +1338,108 @@
             });
           });
 
+      });
+    </script>
+    <!-- CERTIFICATE LIGHTBOX JAVASCRIPT -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var lightbox = document.getElementById("certLightbox");
+        var stage = document.getElementById("certLightboxStage");
+        var lightboxImg = document.getElementById("certLightboxImg");
+        var zoomLabel = document.getElementById("certZoomLabel");
+        var zoom = 1;
+        var MIN_ZOOM = 1;
+        var MAX_ZOOM = 3;
+        var STEP = 0.25;
+
+        function applyZoom() {
+          lightboxImg.style.width = zoom * 100 + "%";
+          zoomLabel.textContent = Math.round(zoom * 100) + "%";
+        }
+
+        function resetView() {
+          zoom = 1;
+          applyZoom();
+          stage.scrollTop = 0;
+          stage.scrollLeft = 0;
+        }
+
+        function openLightbox(src, alt) {
+          lightboxImg.src = src;
+          lightboxImg.alt = alt;
+          resetView();
+          lightbox.hidden = false;
+          document.body.style.overflow = "hidden";
+        }
+
+        function closeLightbox() {
+          lightbox.hidden = true;
+          document.body.style.overflow = "";
+          lightboxImg.src = "";
+        }
+
+        document
+          .querySelectorAll(".certificate-media")
+          .forEach(function (button) {
+            button.addEventListener("click", function () {
+              openLightbox(
+                button.dataset.full,
+                button.querySelector("img").alt,
+              );
+            });
+          });
+
+        document
+          .getElementById("certZoomIn")
+          .addEventListener("click", function () {
+            zoom = Math.min(MAX_ZOOM, zoom + STEP);
+            applyZoom();
+          });
+
+        document
+          .getElementById("certZoomOut")
+          .addEventListener("click", function () {
+            zoom = Math.max(MIN_ZOOM, zoom - STEP);
+            applyZoom();
+          });
+
+        document
+          .getElementById("certZoomReset")
+          .addEventListener("click", resetView);
+
+        document
+          .getElementById("certClose")
+          .addEventListener("click", closeLightbox);
+
+        lightbox.addEventListener("click", function (event) {
+          if (event.target === lightbox) {
+            closeLightbox();
+          }
+        });
+
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape" && !lightbox.hidden) {
+            closeLightbox();
+          }
+        });
+
+        stage.addEventListener(
+          "wheel",
+          function (event) {
+            event.preventDefault();
+            zoom = Math.min(
+              MAX_ZOOM,
+              Math.max(MIN_ZOOM, zoom + (event.deltaY < 0 ? STEP : -STEP)),
+            );
+            applyZoom();
+          },
+          { passive: false },
+        );
+
+        stage.addEventListener("dblclick", function () {
+          zoom = zoom === 1 ? 2 : 1;
+          applyZoom();
+        });
       });
     </script>
   </body>
